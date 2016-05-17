@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang = "en" >
+<head >
+  <meta charset = "UTF-8" >
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
+  <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
+  <title >Title</title >
+
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" >
+
+  <!--==========| INLINE STYLE |==========-->
+  <style >
+    h1 {
+      font-family: "Oswald", sans-serif;
+      font-weight: 300;
+      font-size: 2em;
+    }
+
+    p {
+      /*font-family: "Open Sans", sans-serif;*/
+      font-family: "Open Sans", serif;
+      font-weight: 300;
+      font-size: 1em;
+      margin-top: 10px;
+      color: teal;
+    }
+
+    .container-fluid {
+      background-color: #b0d0a0;
+      border: 0px solid orange;
+    }
+
+    .container {
+      height: 100%;
+      /*margin-right: auto;
+      margin-left: auto;*/
+      padding-left: 0px;
+      padding-right: 0px;
+      -webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
+      box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
+      /*background-color: #80d06b;*/
+      border: 0px solid red;
+    }
+
+    /*.mainContainer {
+      padding: 0;
+      margin: 0;
+    }*/
+
+    .row {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    .leftColumn {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color: #b0d0a0;
+      border: 0px solid red;
+    }
+
+    .rightColumn {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color: #80d06b;
+      border: 0px solid red;
+    }
+  </style >
+
+</head >
+<!--==========| BODY START |==========-->
+<body >
+<div class = "container-fluid" >
+  <div class = "row" >
+    <div class = "col-sm-12" >
+      <h1 >Container-Fluid</h1 >
+    </div >
+  </div >
+</div >
+
+<div class = "container mainContainer" id = "mainContainerId" >
+  <div class = "row" >
+    <h1 >Container</h1 >
+    <div class = "col-xs-4 leftColumn" >Left Column: col-xs-4</div >
+    <div class = "col-xs-8 rightColumn" >Right Column: col-xs-8</div >
+  </div >
+</div >
+
+<!--| Use this container for dynamically generated divs |-->
+<div class = "container gdContainer templateContainer" id = "gdContainerId" ></div >
+
+<!--==========| JAVASCRIPTS |==========-->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script >
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script >
+<script src = "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script >
+<!--<script src = "codeArchitecture.js"></script>-->
+
+<!--==----------| LOCAL ES6 |----------==-->
+<script type = "text/javascript" >
+
+  "use strict";
+
+  /************ ANIMATION ENGINE ************/
+  var tMx = TweenMax;
+  var easeSine = Sine.easeOut;
+  var easePower = Power3.easeOut;
+  var animTym = 4;
+
+  /**-----------=====| fAnimateHeightWidth Function |=====-----------**/
+  /** Animates element's height and width
+   ****************************************************************/
+  var fAnimateHeightWidth = function (elem, eHeight, eWidth) {
+    //tMx.to (elem, animTym, {css: {height: eHeight, width: eWidth}, ease: easePower});
+    tMx.to (elem, animTym, {height: (eHeight + "px"), width: eWidth, ease: easePower});
+  };
+
+  let fAnimateSlide_X = function (elem, xPos) {
+    //tMx.to (elem, animTym, {css: {height: eHeight, width: eWidth}, ease: easePower});
+    tMx.to (elem, animTym, {x: (xPos + "px"), ease: easePower});
+  };
+
+  /**-----------=====| fAnimateHeight Function |=====-----------**/
+  /** Animates element's height
+   ****************************************************************/
+ let fAnimateHeight = function (elem, eHeight) {
+    //tMx.to (elem, animTym, {css: {height: eHeight}, ease: easePower});
+    tMx.to (elem, animTym, {height: (eHeight + "px"), ease: easePower});
+  };
+  /**-----------=====| fAnimateWidth Function |=====-----------**/
+  /** Animates element's width
+   ****************************************************************/
+  let fAnimateWidth = function (elem, eWidth) {
+    //tMx.to (elem, animTym, {css: {height: eHeight}, ease: easePower});
+    tMx.to (elem, animTym, {width: (eWidth + "px"), ease: easePower});
+  };
+
+  /**=---| DOM caching |---=**/
+  let container = $ (".container");
+  let containerWidth = (container.width ());
+  let containerId = $ ("#containerId");
+  console.log (`containerWidth: ${containerWidth}`);
+
+  let mainContainer = $ (".mainContainer");
+  let mainContainerWidth = (mainContainer.width ());
+  let mainContainerId = $ ("#mainContainerId");
+  console.log (`mainContainerWidth: ${mainContainerWidth}`);
+
+  /**-----===| use for dynamically populated |===-----**/
+  let gdContainer = $ (".gdContainer");
+  let gdContainerWidth = (gdContainer.width ());
+  let gdContainerId = $ ("#gdContainerId");
+  console.log (`gdContainerWidth: ${gdContainerWidth}`);
+
+  /**----------------=====| JS CSS STYLE |=====----------------**/
+  /** Description:
+   *  CSS for within the ES6.
+   *  Usage:
+   *  Provides for a dynamic parameters referencing.
+   *******************************************************************************/
+  class CSSStyle {
+    constructor () {
+
+    }
+
+    fCSSstyle (elemId, elemWidth, elemHeight) {
+      elemId.css ({
+          /*"padding-left"    : "-15px",
+           "padding-right"   : "-15px",*/
+          //"background"      : "url(" + imgSrc + ") no-repeat",
+          //"background-size" : "cover", //cover 100%
+          "width"           : elemWidth, //"1300px", //containerWidth,
+          "height"          : elemHeight, //ImageHeight(origWt, origHt), "100%", //
+          "border"          : "0px solid red",
+          "background-color": "teal",
+          "position"        : "relative" //relative absolute
+          //"float"           : "left"
+          /*"overflow"        : "hidden"//hidden; visible*/
+        }
+      );
+    }
+  }
+
+  let mainContainerCSS = new CSSStyle ();
+  mainContainerCSS.fCSSstyle (mainContainerId, mainContainerWidth, "200px");
+
+  /**----------------=====| SampleClassName Class |=====----------------**/
+  /** Description:
+   *  Class to calculate two columns within the mainContainer.
+   *  The provided percentage argument is use for the right column converted to pixel.
+   *  The left column will have the mainContainer width minus the right column width.
+   *******************************************************************************/
+  class SampleClassName {
+    constructor (instanceVar, rightColumn, leftColumn) {
+      this.InstanceVar = instanceVar;
+      this.RightColumn = rightColumn;
+      this.LeftColumn  = leftColumn;
+      /**----- To access these properties outside, use classInstance.property -----**/
+    }
+
+    fSampleClassNameMethod1 (paramPercentage) {
+      this.RightColumn = Math.round (mainContainerWidth * (paramPercentage / 100));
+      this.LeftColumn  = Math.round (mainContainerWidth - this.RightColumn);
+      console.log (
+        `Left Column: ${
+          this.LeftColumn} | Right Column: ${this.RightColumn}
+        `);
+    }
+  }
+
+  //let classInstance = new SampleClassName ();
+  //classInstance.fSampleClassNameMethod1 (80);
+
+  /**-------------------=======| VARIABLES |=======-------------------**/
+  /** Description: **************************************************************
+   *  Element variables for manipulation and animation.
+   *******************************************************************************/
+  let aRowDivs = [];
+
+  let aLeftDivId = [];
+  let aRightDivId = [];
+
+  let aImgsOrigWidth = [];
+  let aImgsOrigHeight = [];
+
+  let aImgsNewWidth = [];
+  let aImgsNewHeight = [];
+
+  let aImgsResizePercent = [];
+
+  let aColumnPercentage = [];
+
+  let iiiCount = 0;
+
+  let imgNewHt; // = twoColumnsTestInstance.ImgNewHeight;
+  let imgNewWt; // = twoColumnsTestInstance.RightColumn;
+  let imgDiv; // = "imgDiv";
+
+  /**-------------------=======| CreateProject CLASS |=======-------------------**/
+  /** Description: **************************************************************
+   *  Class to create row div dynamically.
+   *******************************************************************************/
+
+  /*class CreateProject {
+   constructor (rowCounter, leftCounter, leftColumnWidth,
+   rightCounter, rightColumnWidth,
+   imgCounter, rowDivId, rightDivId, rightParagDivId,
+   imgContainerDivId, imgContainerWidth, myImageSrc) {
+   this.RowCounter        = rowCounter;
+   this.LeftCounter       = leftCounter;
+   this.LeftColumnWidth   = leftColumnWidth;
+   this.RightCounter      = rightCounter;
+   this.RightColumnWidth  = rightColumnWidth;
+   this.ImgCounter        = imgCounter;
+   this.RowDivId          = rowDivId;
+   this.RightDivId        = rightDivId;
+   this.RightParagDivId   = rightParagDivId;
+   this.ImgContainerDivId = imgContainerDivId;
+   this.ImgContainerWidth = imgContainerWidth;
+   this.myImageSrc        = myImageSrc;
+   }*/
+  class CreateProject {
+    constructor () {
+      this.ProjectDivId;
+      this.RowCounter;
+      this.LeftCounter;
+      this.LeftColumnWidth;
+      this.RightCounter;
+      this.RightColumnWidth;
+      this.ImgCounter;
+      this.RowDivId;
+      this.RightDivId;
+      this.RightParagDivId;
+      this.ImgContainerDivId;
+      this.ImgContainerWidth;
+      this.myImageSrc;
+      this.ImgRightColumn;
+      this.ImgDivId;
+
+      this.ParagDivId;
+      this.RightParagDivId;
+
+    }
+
+    fCreateProjectDiv (projCounter, appendedTo) {
+      /** createElement row **/
+      let projectDiv = document.createElement ("div");
+      projectDiv.id  = "projectDivId_" + projCounter; //set id
+      $ (projectDiv).appendTo (appendedTo);
+
+      let projectDivId  = $ ("#projectDivId_" + projCounter); //get id
+      this.ProjectDivId = projectDivId;
+      projectDivId.css ({
+        "width"           : "100%",
+        "height"          : "auto",
+        "border"          : "10px solid black",
+        "background-color": "red",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+      });
+    }
+
+    fCreateRowDiv (rowDiv, rowCounter, rowHeight) {
+      /** createElement row **/
+      rowDiv = document.createElement ("div");
+      rowDiv.id  = "rowDivId_" + rowCounter; //set id
+      rowDiv.className = "rowDiv";
+      $ (rowDiv).appendTo (this.ProjectDivId);
+
+      let rowDivId = $ ("#rowDivId_" + rowCounter); //get id
+
+      //console.log("rowDivId: ",rowDivId);
+      aRowDivs[aRowDivs.length] = rowDivId; //push to array
+
+      this.RowDivId = rowDivId;
+      rowDivId.css ({
+        "width"           : "100%",
+        "height"          : rowHeight,
+        "border"          : "1px solid orange",
+        "background-color": "beige",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+      });
+    }
+
+    fCreateLeftDiv (leftCounter, leftColumnWidth) {
+      /** createElement left column **/
+      let leftDiv = document.createElement ("div");
+      leftDiv.id  = "leftDivId_" + leftCounter; //set id
+
+      $ (leftDiv).appendTo (this.RowDivId);
+
+      let leftDivId = $ ("#leftDivId_" + leftCounter); //get id
+
+      aLeftDivId[aLeftDivId.length] = leftDivId; //push to array
+
+      leftDivId.css ({
+        "width"           : leftColumnWidth - 30, //"20%",
+        "height"          : "100px",
+        "border"          : "1px solid orange",
+        "background-color": "lightGrey",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+      });
+    }
+
+    fCreateRightDiv (rightCounter, rightColumnWidth, rightColumnHeight, imgContainerWidth) {
+      /** createElement right column **/
+      let rightDiv = document.createElement ("div");
+      rightDiv.id  = "rightDivId_" + rightCounter; //set id
+      $ (rightDiv).appendTo (this.RowDivId);
+
+      let rightDivId                  = $ ("#rightDivId_" + rightCounter); //get id
+      this.RightDivId                 = rightDivId;
+      aRightDivId[aRightDivId.length] = rightDivId; //push to array
+      rightDivId.css ({
+        "width"           : rightColumnWidth, //"80%",
+        "height"          : rightColumnHeight, //"100%",
+        "border"          : "4px solid teal",
+        "background-color": "yellowGreen",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        "overflow"        : "visible"
+      });
+
+      /** createElement right column image container **/
+      let imgContainerDiv = document.createElement ("div");
+      imgContainerDiv.id  = "imgContainerDivId_" + rightCounter; //set id
+      $ (imgContainerDiv).appendTo (this.RightDivId);
+
+      let imgContainerDivId  = $ ("#imgContainerDivId_" + rightCounter); //get id
+      this.ImgContainerDivId = imgContainerDivId;
+      imgContainerDivId.css ({
+        "width"           : imgContainerWidth,
+        "height"          : rightColumnHeight, //"98%",
+        "border"          : "4px solid purple",
+        "background-color": "rgba(20, 20, 0, 0.75)",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        "overflow"        : "visible"//hidden; visible
+      });
+
+    }
+
+    fCreateImageDiv (imgDiv, imgCounter, myImageSrc, imgRightColumn, imgNewHt) {
+      /** createElement image div inside right column **/
+      imgDiv = document.createElement ("div");
+      imgDiv.id  = "imageDivId_" + imgCounter; //set id
+      imgDiv.className = "imgDiv";
+      $ (imgDiv).appendTo (this.ImgContainerDivId);
+
+      this.ImgRightColumn = imgRightColumn;
+
+      let imgDivId = $ ("#imageDivId_" + imgCounter); //get id
+
+      this.ImgDivId = imgDivId;
+
+      imgDivId.css ({
+        /*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*/
+        "margin"          : "0px",
+        "background"      : "url(" + myImageSrc + ") no-repeat",
+        "background-size" : "100%", //cover 100%
+        "width"           : imgRightColumn, //"300px",
+        "height"          : imgNewHt, //"300px", //ImageHeight(origWt, origHt),
+        "border"          : "0px solid red",
+        "background-color": "yellow",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        "overflow"        : "visible"//hidden; visible
+      });
+
+      /*/!** createElement: image name div inside image div **!/
+      let imageNameDiv       = document.createElement ("div");
+      imageNameDiv.className = "imageNameDivClass";
+      imageNameDiv.id        = "imageNameDivId_" + imgCounter;
+      $ (imageNameDiv).appendTo (imgDivId);
+
+      let imageNameDivId = $ ("#imageNameDivId_" + imgCounter); //get id
+      imageNameDivId.css ({
+        "font-family"     : "Oswald",
+        "font-size"       : "1em",
+        "padding"         : "10px",
+        /!*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*!/
+        "margin"          : "0px",
+        /!*"background"      : "url(" + myImageSrc + ") no-repeat",
+         "background-size" : "cover", //cover 100%
+         "width"           : imgRightColumn, //"300px",
+         "height"          : imgNewHt,*!/
+        "border"          : "1px solid orange",
+        "background-color": "orange",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        "overflow"        : "visible"//hidden; visible
+      });
+
+      imageNameDiv.innerHTML = imageNameString;*/
+    }
+
+    fCreateImageNameDiv(imgNameCounter, imageNameString){
+      /** createElement: image name div inside image div **/
+      let imageNameDiv       = document.createElement ("div");
+      imageNameDiv.className = "imageNameDivClass";
+      imageNameDiv.id        = "imageNameDivId_" + imgNameCounter;
+      $ (imageNameDiv).appendTo (this.ImgDivId);
+
+      let imageNameDivId = $ ("#imageNameDivId_" + imgNameCounter); //get id
+      imageNameDivId.css ({
+        "font-family"     : "Oswald",
+        "font-size"       : "1em",
+        "padding"         : "10px",
+        /*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*/
+        "margin"          : "0px",
+        /*"background"      : "url(" + myImageSrc + ") no-repeat",
+         "background-size" : "cover", //cover 100%
+         "width"           : imgRightColumn, //"300px",
+         "height"          : imgNewHt,*/
+        "border"          : "1px solid orange",
+        "background-color": "orange",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        "overflow"        : "visible"//hidden; visible
+      });
+
+      imageNameDiv.innerHTML = imageNameString;
+    }
+
+    fCreateRowParagDiv (parCounter) {
+      /** createElement row **/
+      let paragDiv = document.createElement ("div");
+      paragDiv.id  = "paragDivId_" + parCounter; //set id
+      $ (paragDiv).appendTo (this.ProjectDivId);
+
+      let paragDivId  = $ ("#paragDivId_" + parCounter); //get id
+      this.ParagDivId = paragDivId;
+      paragDivId.css ({
+        "width"           : "100%",
+        "height"          : "auto",
+        "border"          : "1px solid orange",
+        "background-color": "darkRed",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+      });
+    }
+
+    fCreateLeftParagDiv (leftParCounter, leftColumnWidth) {
+      /** createElement left column **/
+      let leftParagDiv = document.createElement ("div");
+      leftParagDiv.id  = "leftParagDivId_" + leftParCounter; //set id
+      $ (leftParagDiv).appendTo (this.ParagDivId);
+
+      let leftParagDivId = $ ("#leftParagDivId_" + leftParCounter); //get id
+      leftParagDivId.css ({
+        "width"           : leftColumnWidth - 30, //"20%",
+        "height"          : "100px",
+        "border"          : "1px solid orange",
+        "background-color": "lightGrey",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+      });
+    }
+
+    fCreateRightParagDiv (rightParCounter, rightColumnWidth, titleString, subTitleString, projDescripString) {
+      /** createElement right column **/
+      let rightParagDiv = document.createElement ("div");
+      rightParagDiv.id  = "rightParagDivId_" + rightParCounter; //set id
+      $ (rightParagDiv).appendTo (this.ParagDivId);
+
+      let rightParagDivId  = $ ("#rightParagDivId_" + rightParCounter); //get id
+      this.RightParagDivId = rightParagDivId;
+      rightParagDivId.css ({
+        "width"           : rightColumnWidth, //"80%",
+        "height"          : "200px", //"auto", //"100%",
+        "border"          : "4px solid teal",
+        "background-color": "yellowGreen",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        //"display"         : "block",
+        "overflow"        : "visible"
+      });
+
+      /** createElement: title div inside right parag div **/
+      let titleDiv       = document.createElement ("div");
+      titleDiv.className = "titleDivClass";
+      titleDiv.id        = "titleDivId_" + rightParCounter;
+      $ (titleDiv).appendTo (this.RightParagDivId);
+
+      let titleDivId = $ ("#titleDivId_" + rightParCounter); //get id
+      titleDivId.css ({
+        "font-family"     : "Oswald",
+        "font-size"       : "1em",
+        "padding"         : "10px",
+        /*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*/
+        "margin"          : "0px",
+        /*"background"      : "url(" + myImageSrc + ") no-repeat",
+         "background-size" : "cover", //cover 100%
+         "width"           : imgRightColumn, //"300px",
+         "height"          : imgNewHt,*/
+        "border"          : "1px solid orange",
+        "background-color": "orange",
+        "position"        : "relative", //relative absolute
+        //"float"           : "left",
+        "overflow"        : "visible"//hidden; visible
+      });
+
+      titleDiv.innerHTML = titleString;
+
+      /** createElement: sub-title div inside right parag div **/
+      let subTitleDiv       = document.createElement ("div");
+      subTitleDiv.className = "subTitleDivClass";
+      subTitleDiv.id        = "subTitleDivId_" + rightParCounter;
+      $ (subTitleDiv).appendTo (this.RightParagDivId);
+
+      let subTitleDivId = $ ("#subTitleDivId_" + rightParCounter); //get id
+      subTitleDivId.css ({
+        "font-family"     : "Oswald",
+        "font-size"       : "1em",
+        "padding"         : "10px",
+        /*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*/
+        "margin"          : "0px",
+        /*"background"      : "url(" + myImageSrc + ") no-repeat",
+         "background-size" : "cover", //cover 100%
+         "width"           : imgRightColumn, //"300px",
+         "height"          : imgNewHt,*/
+        "border"          : "1px solid grey",
+        "background-color": "orange",
+        "position"        : "relative", //relative absolute
+        //"float"           : "left",
+        //"display"         : "block",
+        "overflow"        : "visible"//hidden; visible
+      });
+
+      subTitleDiv.textContent = subTitleString;
+
+      /** createElement: project description div inside right parag div **/
+      let projDescripDiv       = document.createElement ("div");
+      projDescripDiv.className = "projDescripDivClass";
+      projDescripDiv.id        = "projDescripDivId_" + rightParCounter;
+      $ (projDescripDiv).appendTo (this.RightParagDivId);
+
+      let projDescripDivId = $ ("#projDescripDivId_" + rightParCounter); //get id
+      projDescripDivId.css ({
+        "font-family"     : "Oswald",
+        "font-size"       : "1em",
+        "padding"         : "10px",
+        /*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*/
+        "margin"          : "0px",
+        /*"background"      : "url(" + myImageSrc + ") no-repeat",
+         "background-size" : "cover", //cover 100%
+         "width"           : imgRightColumn, //"300px",
+         "height"          : imgNewHt,*/
+        "border"          : "1px solid orange",
+        "background-color": "orange",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        "overflow"        : "visible"//hidden; visible
+      });
+
+      //projDescripDiv.innerHTML = projDescripString;
+    }
+
+  }
+
+  let projectGDImgs = new CreateProject ();
+
+  /**----------------=====| TwoColumnsClass Class |=====----------------**/
+  /** Description:
+   *  Class to calculate the two columns within the bootstrap container.
+   *  The provided percentage argument is use for the right column converted to pixel.
+   *  The left column will have the container width minus the right column width.
+   *******************************************************************************/
+  class TwoColumnsClass {
+    constructor (rightColumn, leftColumn, imgNewHeight, imgResizePercent) {
+      this.RightColumn      = rightColumn;// = RightColumn; //right column property that's accessible outside through the Class
+      this.LeftColumn       = leftColumn;// = LeftColumn; //left column property
+      this.ImgNewHeight     = imgNewHeight;
+      this.imgResizePercent = imgResizePercent;
+      /**----- To access these properties outside, use classInstance.property -----**/
+    }
+
+    fTwoColumns (rightColumnPercentage) {
+      this.RightColumn = Math.round (gdContainerWidth * (rightColumnPercentage / 100));
+      this.LeftColumn  = Math.round (gdContainerWidth - this.RightColumn);
+      //console.log (`Right Column: ${this.RightColumn} | Left Column: ${this.LeftColumn}`);
+    }
+
+    fImgResPerc (origImgWidth, origImgHeight, imgRightColumn) {
+      let imgOrigWidth      = origImgWidth;
+      let imgOrigHeight     = origImgHeight;
+      let imgResizePercent  = imgRightColumn / imgOrigWidth;
+      imgResizePercent      = fRoundToTwo (imgResizePercent);
+      this.imgResizePercent = imgResizePercent;
+      this.ImgNewHeight     = Math.round (imgOrigHeight * imgResizePercent);
+
+      aImgsResizePercent[aImgsResizePercent.length] = imgResizePercent; //push to array
+      aImgsNewWidth[aImgsNewWidth.length]           = this.RightColumn; //push to array
+      aImgsNewHeight[aImgsNewHeight.length]         = this.ImgNewHeight; //push to array
+
+      /*console.log ("imgOrigWidth: ", imgOrigWidth);
+       console.log ("imgRightColumn: ", imgRightColumn);
+       console.log ("imgResizePercent: ", imgResizePercent);
+       console.log ("imgOrigHeight: ", imgOrigHeight);
+       console.log ("this.ImgNewHeight: ", this.ImgNewHeight);*/
+    }
+  }
+
+  /**----------------=====| fRoundToTwo Function |=====----------------**/
+  /** Description:
+   *  fRoundToTwo: rounds the decimals to two.
+   *******************************************************************************/
+  let fRoundToTwo = function (num) {
+    return +(Math.round (num + "e+2") + "e-2");
+  };
+
+  let twoColumnsTestInstance = new TwoColumnsClass ();
+
+  /*********************( AJAX • START •  JSON )*********************/
+  let fRunAjax = function () {
+    console.log ("fRunAjax:===-------------------------•");
+    $.ajax ({
+      url     : "./src/json/ajaxData2_simple.json",
+      type    : "GET",
+      dataType: "json",
+      cache   : "false",
+      success : function (data) {
+        console.log ("data: ", data);
+
+        let i   = 0;
+        let ii  = 0;
+        let iii = 0;
+
+        console.log ("************************************************");
+
+        /**-----===| SECTIONS |===-----**/
+        for (let sect of data.GDSite) {
+          console.log ("sect: ", sect);
+          i++;
+          //allSections.fBuildSectionHeaderContainer (sect.sectionTitle, i);
+          //projectGDImgs.fCreateRowDiv (i, gdContainerId); // "./images/elnido.jpg", "300px", "200px", "Image Name String");
+
+          /**-----===| PROJECTS: ROW |===-----**/
+          for (let proj of sect.projects) {
+            ii++;
+
+            /** Calculates right columns width **/
+            twoColumnsTestInstance.fTwoColumns (proj.columnPercentage);
+
+            aColumnPercentage[aColumnPercentage.length] = proj.columnPercentage; //push to array
+
+            /** Calculates div heights **/
+            twoColumnsTestInstance.fImgResPerc (proj.imagesWidth, proj.imagesHeight,
+              twoColumnsTestInstance.RightColumn);
+
+            aImgsOrigWidth[aImgsOrigWidth.length]   = proj.imagesWidth; //push to array
+            aImgsOrigHeight[aImgsOrigHeight.length] = proj.imagesHeight; //push to array
+
+            let imageContainerWidth = proj.images.length * twoColumnsTestInstance.RightColumn + 100;//proj.imagesWidth +100;
+            console.log ("imageContainerWidth:", imageContainerWidth, "• images count:", proj.images.length, "•", proj.title);
+
+            /*allSections.fBuildProjectContainer (
+             ii, proj.title, proj.title, proj.subTitle,
+             proj.projDescription, imageContainerWidth,
+             ownImageResizePerc.ImgNewHeight);*///, ("My Unique Tag:  " + proj.title));
+            console.log ("=====-------------------------------------------=====");
+            projectGDImgs.fCreateProjectDiv (ii, gdContainerId); //, twoColumnsTestInstance.ImgNewHeight);
+
+            let rowDiv = "imgRowDiv";
+            projectGDImgs.fCreateRowDiv (rowDiv, ii, twoColumnsTestInstance.ImgNewHeight);
+
+            projectGDImgs.fCreateLeftDiv (ii, twoColumnsTestInstance.LeftColumn);
+            projectGDImgs.fCreateRightDiv (ii, twoColumnsTestInstance.RightColumn, twoColumnsTestInstance.ImgNewHeight, imageContainerWidth);
+
+            projectGDImgs.fCreateRowParagDiv (ii);
+            projectGDImgs.fCreateLeftParagDiv (ii, twoColumnsTestInstance.LeftColumn);
+            projectGDImgs.fCreateRightParagDiv (ii, twoColumnsTestInstance.RightColumn, proj.title, proj.subTitle, proj.projDescription);
+
+            //projectGDImgs.fCreateRowDiv (i+ii, gdContainerId, "200px");
+            //projectGDImgs.fCreateProjectDiv (ii, gdContainer);
+            //projectGDPar.fCreateRowDiv (ii, twoColumnsTestInstance.ImgNewHeight);
+            //projectGDPar.fCreateLeftDiv (ii, twoColumnsTestInstance.LeftColumn);
+            //projectGDPar.fCreateRightDiv (ii, twoColumnsTestInstance.RightColumn, twoColumnsTestInstance.ImgNewHeight, imageContainerWidth);
+
+            /*console.log (
+             `
+             |=====--------------------------=====| i:${i} iii:${iii}
+             Project Log Info | Project: ${proj.title} | ii: ${ii}
+             Project Right Column Percentage: ${proj.columnPercentage}
+             RowDiv Ht: ${twoColumnsTestInstance.ImgNewHeight}
+             `);*/
+
+            /**-----===| IMAGES |===-----**/
+            for (let imgs of proj.images) {
+              iii++;
+              //console.log (`iii: ${iii}`);
+              iiiCount = iii;
+
+              //twoColumnsTestInstance.fImgResPerc (proj.imagesWidth, proj.imagesHeight, twoColumnsTestInstance.RightColumn);
+
+              let myImage    = new Image ();
+              let imagesPath = "./images/" + proj.title + "/";
+              myImage.src    = imagesPath + imgs.imgName;
+
+              imgNewHt = twoColumnsTestInstance.ImgNewHeight;
+              imgNewWt = twoColumnsTestInstance.RightColumn;
+              imgDiv = "imgDiv";
+              projectGDImgs.fCreateImageDiv (imgDiv, iii, myImage.src, imgNewWt, imgNewHt);
+              /*fAnimateHeight (imgDiv, imgNewHt);
+              fAnimateWidth(imgDiv, imgNewWt);*/
+
+              projectGDImgs.fCreateImageNameDiv (iii, imgs.imgTitle);
+
+
+              /*allSections.fBuildImageDivs (
+               proj.title, iii, myImage.src, imgs.imgTitle,
+               twoColumnsTestInstance.RightColumn,
+               ownImageResizePerc.ImgNewHeight);
+
+               ownImageResizePerc.fImgResPerc (
+               proj.imagesWidth, proj.imagesHeight,
+               twoColumnsTestInstance.RightColumn);*/
+
+              /*console.log (
+               `
+               |=====--------------------------=====| i:${i} ii:${ii}
+               Images Log Info | Title: ${proj.title} | iii: ${iii}
+               Orig Width: ${proj.imagesWidth} | Orig Height: ${proj.imagesHeight}
+               Image Resize Percentage: ${twoColumnsTestInstance.imgResizePercent}
+               New Width: ${twoColumnsTestInstance.RightColumn} | New Height: ${twoColumnsTestInstance.ImgNewHeight}
+               imgName: ${imgs.imgName} | imgTitle: ${imgs.imgTitle}
+               `);*/
+
+            }
+          }
+        }
+        console.log ("************************************************");
+      }
+    });
+  };
+
+  fRunAjax ();
+  /*********************( AJAX • END •  JSON )*********************/
+
+  /************ WINDOW RESIZE TESTING ************/
+  //function fOnWindowResize(){
+  let fOnWindowResize = function () {
+    //let projectGDImgs = new CreateProject ();
+    //fRunAjax ();
+    //console.log (`containerWidth ${containerWidth}`);
+    //console.log (`projectGDImgs.RowDivId: ${projectGDImgs.RowDivId}`);
+    //fAnimateSlide_X (projectGDImgs.RowDivId, "500px")
+    //${twoColumnsTestInstance.fImgResPerc (544, 438, twoColumnsTestInstance.RightColumn)}
+    //console.log (`iiiCount: ${iiiCount}`);
+    //console.log (`aRowDivs: ${aRowDivs}`);
+
+    containerWidth = container.width ();
+
+    gdContainerWidth = gdContainer.width ();
+    //console.log (`gdContainerWidth ${gdContainerWidth}`);
+
+    /*twoColumnsTestInstance.fTwoColumns (80);
+
+    console.log (`twoColumnsTestInstance.RightColumn: ${twoColumnsTestInstance.RightColumn}`);
+
+    console.log (`twoColumnsTestInstance.ImgNewHeight: ${twoColumnsTestInstance.ImgNewHeight}`);
+
+    projectGDImgs.ImgRightColumn = twoColumnsTestInstance.RightColumn;*/
+
+    //projectGDImgs.RowDivId.css ({"width": twoColumnsTestInstance.RightColumn});
+    //aRowDivs.css ({"width": aImgsNewWidth});
+    //fAnimateSlide_X (aRowDivs, 500);
+    //aRightDivId.css ({"width": aImgsNewWidth});
+
+    /*for (let div of aRightDivId) {
+      fAnimateHeightWidth (div, aImgsNewHeight, aImgsNewWidth);
+      console.log (`
+      ***===------------------------------===***
+      div: ${div}
+      aRightDivId: ${aRightDivId} ${aRightDivId.length}
+      aImgsNewHeight: ${aImgsNewHeight}
+      aImgsNewWidth: ${aImgsNewWidth}
+      projectGDImgs.ImgRightColumn ${projectGDImgs.ImgRightColumn}
+
+      `);
+    }*/
+
+    //fRunAjax ();
+    twoColumnsTestInstance.fTwoColumns (80);
+
+    imgNewHt = twoColumnsTestInstance.ImgNewHeight;
+    imgNewWt = twoColumnsTestInstance.RightColumn;
+
+    fAnimateHeight (imgDiv, imgNewHt);
+    fAnimateWidth(imgDiv, twoColumnsTestInstance.RightColumn);
+
+    console.log (`twoColumnsTestInstance.RightColumn: ${twoColumnsTestInstance.RightColumn}`);
+
+
+    console.log (`
+    imgNewHt: ${imgNewHt}
+    imgNewWt: ${twoColumnsTestInstance.RightColumn}
+    aRightDivId: ${aRightDivId}
+    aRightDivId.length: ${aRightDivId.length}
+    `);
+
+    /*console.log (`
+    ***===------------------------------===***
+      aRowDivs: ${aRowDivs}
+      aImgsOrigWidth: ${aImgsOrigWidth}
+      aImgsOrigHeight: ${aImgsOrigHeight}
+      aColumnPercentage: ${aColumnPercentage}
+      aImgsNewWidth: ${aImgsNewWidth}
+      aImgsNewHeight: ${aImgsNewHeight}
+      aImgsResizePercent: ${aImgsResizePercent}
+      aRightDivId: ${aRightDivId}
+    `);*/
+
+    /*for (let row of aRowDivs) {
+     //fAnimateSlide_X (row, 500)
+     //fAnimateHeightWidth (row, 400, "300px")
+     //console.log (`aRowDivs: ${aRowDivs}`);
+     }*/
+
+  };
+
+  $ (window).on ('resize', fOnWindowResize);
+  /************ END WINDOW RESIZE TESTING ************/
+
+</script >
+</body >
+</html >

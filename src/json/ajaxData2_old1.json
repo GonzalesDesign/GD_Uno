@@ -1,0 +1,161 @@
+{
+  "GDSite": [
+    {
+      "section": [
+        {
+          "sectionTitle"   : "Web & Graphics Designs",
+          "title": "OwnPhones",
+          "subTitle": "Wireless Earbuds",
+          "projDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+          "imagesWidth"    : "544",
+          "imagesHeight": "449",
+          "images": [
+            {
+              "imgName": "AboutOP.jpg",
+              "imgTitle": "About OwnPhones 1",
+              "imgDescription": "AboutOP-02 description."
+            }, {
+              "imgName": "Jewelry.jpg",
+                "imgTitle": "About OwnPhones 2",
+                "imgDescription": "Jewelry-02 description."
+            }, {
+              "imgName"       : "Poster_CustomeFit.jpg",
+                "imgTitle": "About OwnPhones 3",
+              "imgDescription": "Poster_CustomeFit-02 description."
+            }, {
+              "imgName": "OurTech.jpg",
+                "imgTitle": "About OwnPhones 4",
+                "imgDescription": "OurTech-02 description."
+            }
+          ]
+        },
+        {
+          "title"          : "HBCBS",
+          "subTitle": "Horizon Blue Cross Blue Shield",
+          "projDescription": "subAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+          "imagesWidth"    : "544",
+          "imagesHeight": "350",
+          "images": [
+            {
+              "imgName"       : "HBCBS-00.jpg",
+              "imgTitle": "HBCBS-00",
+              "imgDescription": "Me standing in front of my painting."
+            }, {
+              "imgName": "HBCBS-01.jpg",
+              "imgTitle": "HBCBS-01",
+              "imgDescription": "HBCBS-02 description."
+            }, {
+              "imgName": "HBCBS-02.jpg",
+              "imgTitle": "HBCBS-02",
+              "imgDescription": "HBCBS-03 description."
+            }
+          ]
+        }
+      ]
+    }, {
+      "section": [
+        {
+          "sectionTitle"   : "Painting & Digital Illustrations",
+          "title": "PersonalFresh",
+          "subTitle": "eStore",
+          "projDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+          "imagesWidth"    : "544",
+          "imagesHeight": "550",
+          "images": [
+          {
+            "imgName": "PF-00.jpg",
+            "imgTitle": "About PersonalFresh",
+            "imgDescription": "PersonalFresh Description 00."
+          }, {
+            "imgName": "PF-01.jpg",
+              "imgTitle": "About PersonalFresh",
+              "imgDescription": "PersonalFresh Description 01."
+          }, {
+            "imgName": "PF-02.jpg",
+              "imgTitle": "About PersonalFresh",
+              "imgDescription": "PersonalFresh Description 02."
+          }, {
+            "imgName": "PF-03.jpg",
+              "imgTitle": "About PersonalFresh",
+              "imgDescription": "PersonalFresh Description 03."
+          }, {
+            "imgName": "PF-04.jpg",
+              "imgTitle": "About PersonalFresh",
+              "imgDescription": "PersonalFresh Description 04."
+          }, {
+            "imgName": "PF-05.jpg",
+              "imgTitle": "About PersonalFresh",
+              "imgDescription": "PersonalFresh Description 05."
+          }
+        ]
+        }, {
+          "title"          : "Filipinas",
+          "subTitle": "Kawali Restaurant Painting",
+          "projDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+          "imagesWidth"    : "544",
+          "imagesHeight": "449",
+          "images": [
+            {
+              "imgName"       : "FilipinasMural-01.jpg",
+              "imgTitle": "FilipinasMural-01",
+              "imgDescription": "Me standing in front of my painting."
+            }, {
+              "imgName"       : "FilipinasMural-02.jpg",
+              "imgTitle": "FilipinasMural-02",
+              "imgDescription": "FilipinasMural-02 description."
+            }, {
+              "imgName"       : "FilipinasMural-03.jpg",
+              "imgTitle": "FilipinasMural-03",
+              "imgDescription": "FilipinasMural-03 description."
+            }, {
+              "imgName"       : "FilipinasMural-04.jpg",
+              "imgTitle": "FilipinasMural-04",
+              "imgDescription": "FilipinasMural-04 description."
+            }, {
+              "imgName"       : "FilipinasMural-05.jpg",
+              "imgTitle": "FilipinasMural-05",
+              "imgDescription": "FilipinasMural-05 description."
+            }, {
+              "imgName"       : "FilipinasMural-06.jpg",
+              "imgTitle": "FilipinasMural-06",
+              "imgDescription": "FilipinasMural-06 description."
+            }, {
+              "imgName"       : "FilipinasMural-07.jpg",
+              "imgTitle": "FilipinasMural-07",
+              "imgDescription": "FilipinasMural-07 description."
+            }
+          ]
+        }, {
+          "title"          : "PostersIntro",
+          "subTitle": "Posters Digital Painting",
+          "projDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+          "imagesWidth"    : "544",
+          "imagesHeight": "650",
+          "images": [
+            {
+              "imgName"       : "intro_00.jpg",
+              "imgTitle": "intro_00",
+              "imgDescription": "Me standing in front of my painting."
+            }, {
+              "imgName": "intro_01.jpg",
+              "imgTitle": "intro_01",
+              "imgDescription": "intro_01 description."
+            }, {
+              "imgName": "intro_02.jpg",
+              "imgTitle": "intro_02",
+              "imgDescription": "intro_02 description."
+            }, {
+              "imgName": "intro_03.jpg",
+              "imgTitle": "intro_03",
+              "imgDescription": "intro_03 description."
+            }, {
+              "imgName": "intro_04.jpg",
+              "imgTitle": "intro_04",
+              "imgDescription": "intro_04 description."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

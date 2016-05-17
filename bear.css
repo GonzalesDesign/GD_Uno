@@ -1,0 +1,9 @@
+@import 'base.css';
+
+div{
+  color: darkred;
+}
+
+.testElem{
+  z-index: 200;
+}

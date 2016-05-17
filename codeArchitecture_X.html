@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang = "en" >
+<head >
+  <meta charset = "UTF-8" >
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
+  <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
+  <title >codeArchitecture_X</title >
+
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" >
+
+  <!--==========| INLINE STYLE |==========-->
+  <style >
+    h1 {
+      font-family: "Oswald", sans-serif;
+      font-weight: 300;
+      font-size: 2em;
+    }
+
+    p {
+      /*font-family: "Open Sans", sans-serif;*/
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      font-size: 1em;
+      margin-top: 10px;
+      color: dimgrey;
+    }
+
+    .container-fluid {
+      background-color: #b0d0a0;
+      border: 0px solid orange;
+    }
+
+    .container {
+      height: 100%;
+      /*margin-right: auto;
+      margin-left: auto;*/
+      padding-left: 0px;
+      padding-right: 0px;
+      -webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
+      box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
+      /*background-color: #80d06b;*/
+      border: 0px solid red;
+    }
+
+    /*.mainContainer {
+      padding: 0;
+      margin: 0;
+    }*/
+
+    .row {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    .columnDiv {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color: #b0d0a0;
+      border: 0px solid red;
+    }
+
+    .rightColumn {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color: #cad080;
+      border: 0px solid red;
+    }
+
+    /**-------===| These css class are generated from js |===-------**/
+    .WebGraphicsDesigns_SectionClass {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #bff4c0;
+    }
+
+    .WebGraphicsDesigns_LeftClass {
+      background-color: #f4c498;
+    }
+
+    .PaintingDigitalIllustrations_SectionClass {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #f4ddd7;
+    }
+
+    .sectTitleClass {
+      font-family: "Oswald", sans-serif;
+      font-weight: 300;
+      font-size: 1.5em;
+      /*margin-top: 20px;
+      margin-bottom: 20px;*/
+      border: 1px solid red;
+    }
+
+    .OwnPhones_LeftClass {
+      background-color: #f4e893;
+    }
+
+    .HBCBS_LeftClass {
+      background-color: #f4bc72;
+    }
+
+    .PersonalFresh_LeftClass {
+      background-color: #f47c30;
+    }
+
+    /**-----==| Paragraph div classes |==-----**/
+    .projTitleClass {
+      font-family: "Oswald", sans-serif;
+      font-weight: 300;
+      font-size: 1.5em;
+      margin-top: 20px;
+      border: 0px solid yellowGreen;
+    }
+
+    .projSubTitleClass {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: gray;
+      border: 0px solid #44cdb5;
+    }
+
+    .projDescriptionClass {
+      /*font-family: "Open Sans", sans-serif;*/
+      font-family: "Merriweather", sans-serif;
+      font-weight: 300;
+      font-size: 1.2em;
+      padding-right: 20px;
+      margin-bottom: 100px;
+      color: dimgrey;
+      border: 0px solid #cd47c1;
+    }
+
+    .projLeftColumnClass {
+      height: 10px;
+      background-color: #92f4f1;
+    }
+
+    .projRightColumnClass {
+      background-color: #f4f1e4;
+    }
+
+    .OwnPhones_FluidContainer_Class, .HBCBS_FluidContainer_Class, .PersonalFresh_FluidContainer_Class, .Filipinas_FluidContainer_Class {
+      /*background-color: #92f4f1;*/
+      /*border: 1px solid #cd47c1;*/
+      border-top: 1px solid;
+    }
+
+    /**-------===| End css class generated from js |===-------**/
+
+    a:link {
+      color: #c00
+    }
+
+    /* unvisited links */
+    a:visited {
+      color: #0c0
+    }
+
+    /* visited links   */
+    a:hover {
+      color: #00c
+    }
+
+    /* user hovers     */
+    a:active {
+      color: #ccc
+    }
+
+    /* active links    */
+
+    .glyphicon {
+      color: white;
+    }
+
+
+  </style >
+
+</head >
+<!--==========| BODY START |==========-->
+<body >
+<div class = "container-fluid" >
+  <div class = "row" >
+    <div class = "col-sm-12" >
+      <h1 >Container-Fluid</h1 >
+    </div >
+  </div >
+</div >
+
+<div class = "container mainContainer" id = "mainContainerId" >
+  <div class = "row" >
+    <h1 >Container</h1 >
+    <div class = "col-xs-2 columnDiv" >Left Column: col-xs-2</div >
+    <div class = "col-xs-10 rightColumn" >Right Column: col-xs-10
+    <p>Using NodeJS, Webpack and ES6: <br >
+       NodeJS already installed. <br /><br />
+       Start by creating the project directory and setup the index.html. <br /><br />
+       Terminal: <br />
+       npm init to create the package.json<br />
+       Open package.json and edit info <br />
+       Go back to Terminal <br />
+       npm install : Goes and grabs the diff packages <br />
+       Create webpack.config.js manually <br /><br >
+      Template setup: <br >
+       codeArchitecture_X.html calling codeArchitecture_XBundle.js <br >
+      webpack.config.js <br >
+      package.json <br >
+      *********************************** <br >
+      Modules: <br >
+      NextPreviousArrows.js : module.exports.NextPreviousClass = NextPreviousClass; <br >
+       codeArchitecture_X.js : let nextPreviousArrows = require ('./NextPreviousArrows'); <br >
+       let newNextPrevious = nextPreviousArrows.NextPreviousClass(); <br >
+       newNextPrevious; <br >
+      <br /><br />
+       To run Webpack Dev Server, copy and paste the following in the Terminal: <br />
+       node_modules/.bin/webpack-dev-server <br />
+       Test setup by running localhost:8080. Check Console for any errors. <br />
+      Stop the server: Ctrl C <br >
+      Start the server: npm start <br >
+    </p>
+    </div >
+  </div >
+</div >
+
+<!--| Use this container for dynamically generated divs |-->
+<div class = "container gdContainer templateContainer" id = "gdContainerId" >
+
+  <!--==========| JAVASCRIPTS |==========-->
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script >
+  <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script >
+  <script src = "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script >
+  <!--<script src = "jsX/codeArchitecture_X.js"></script>-->
+  <script src = "codeArchitecture_XBundle.js"></script>
+
+
+
+  <!--==----------| LOCAL ES6 |----------==-->
+  <!--
+  <script type = "text/javascript" >
+    //<script type = "text/ecmascript-6" >
+    //<script type="text/javascript">
+
+    "use strict";
+
+    console.log (`
+      Things to do: May 16, 2016
+      - Activate the image navigations
+      - Include the youTube video on OwnPhones
+
+      Test the ff new features instead:
+      - Promise
+      - Arrow function
+      - String literals
+
+    `);
+
+
+    /************ ANIMATION ENGINE ************/
+    var tMx = TweenMax;
+    var easeSine = Sine.easeOut;
+    var easePower = Power3.easeOut;
+    var animTym = .5;
+    var zeroTym = 0;
+
+    /**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| fAnimateHeightWidth Function |=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Animates element's height and width
+     ****************************************************************/
+    var fAnimateHeightWidth = function (elem, eHeight, eWidth, animTym) {
+      //tMx.to (elem, animTym, {css: {height: eHeight, width: eWidth}, ease: easePower});
+      tMx.to (elem, animTym, {height: (eHeight + "px"), width: eWidth, ease: easePower});
+    };
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| fRoundToTwo Function |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  fRoundToTwo: rounds the decimals to two.
+     *******************************************************************************/
+    let fRoundToTwo = function (num) {
+      return +(Math.round (num + "e+2") + "e-2");
+    };
+
+    /**=-&#45;&#45;| DOM caching |-&#45;&#45;=**/
+    let container = $ (".container");
+    let containerWidth = (container.width ());
+    let containerId = $ ("#containerId");
+    //console.log (`containerWidth: `);
+
+    let mainContainer = $ (".mainContainer");
+    let mainContainerWidth = (mainContainer.width ());
+    let mainContainerId = $ ("#mainContainerId");
+    //console.log (`mainContainerWidth: `);
+
+    /**-&#45;&#45;&#45;&#45;===| use for dynamically populated |===-&#45;&#45;&#45;&#45;**/
+    let gdContainer = $ (".gdContainer");
+    let gdContainerWidth = (gdContainer.width ());
+    let gdContainerId = $ ("#gdContainerId");
+    //console.log (`gdContainerWidth: `);
+
+    //let projName = FilipinasProjId_0//"default value";// = $ (".FilipinasProjClass");
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| JS CSS STYLE |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  CSS within the ES6.
+     *  Usage:
+     *  Provides for a dynamic parameters referencing.
+     *******************************************************************************/
+    class CSSStyle {
+      constructor () {
+
+      }
+
+      fCSSstyle (elemId, elemWidth, elemHeight) {
+        elemId.css ({
+            /*"padding-left"    : "-15px",
+             "padding-right"   : "-15px",*/
+            //"background"      : "url(" + imgSrc + ") no-repeat",
+            //"background-size" : "cover", //cover 100%
+            "width"           : elemWidth, //"1300px", //containerWidth,
+            "height"          : elemHeight, //ImageHeight(origWt, origHt), "100%", //
+            "border"          : "0px solid red",
+            "background-color": "teal",
+            "position"        : "relative" //relative absolute
+            //"float"           : "left"
+            /*"overflow"        : "hidden"//hidden; visible*/
+          }
+        );
+      }
+
+    }
+
+    let mainContainerCSS = new CSSStyle ();
+    mainContainerCSS.fCSSstyle (mainContainerId, mainContainerWidth, "200px");
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| SampleClassName Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  Class to calculate two columns within the mainContainer.
+     *  The provided percentage argument is use for the right column converted to pixel.
+     *  The left column will have the mainContainer width minus the right column width.
+     *******************************************************************************/
+    /*class SampleClassName {
+     constructor (instanceVar, rightColumn, columnDiv) {
+     this.InstanceVar = instanceVar;
+     this.RightColumn = rightColumn;
+     this.LeftColumn  = columnDiv;
+     /!**-&#45;&#45;&#45;&#45; To access these properties outside, use classInstance.property -&#45;&#45;&#45;&#45;**!/
+     }
+
+     fSampleClassNameMethod1 (paramPercentage) {
+     this.RightColumn = Math.round (mainContainerWidth * (paramPercentage / 100));
+     this.LeftColumn  = Math.round (
+     mainContainerWidth - this.RightColumn);
+     console.log (`
+     Left Column: ${this.LeftColumn} | Right Column: ${this.RightColumn}`);
+     }
+     }*/
+
+    //let classInstance = new SampleClassName ();
+    //classInstance.fSampleClassNameMethod1 (80);
+
+    /*class CreateDivs {
+     constructor () {
+     }
+
+     fCreateProjectDiv (counter, appendedTo, myImageSrc, imgRightColumn, imgNewHt, imageNameString) {
+     /!** createElement row **!/
+     let rowDiv       = document.createElement ("div");
+     rowDiv.id        = "rowDivId_" + counter; //set id
+     rowDiv.className = "rowDivClass";
+     $ (rowDiv).appendTo (appendedTo);
+
+     let rowDivId = $ ("#rowDivId_" + counter); //get id
+     rowDivId.css ({
+     "width"           : "100%",
+     "height"          : "100%",
+     "border"          : "0px solid orange",
+     "background-color": "beige",
+     "position"        : "relative", //relative absolute
+     "float"           : "left"
+     });
+
+     /!** createElement left column **!/
+     let leftDiv       = document.createElement ("div");
+     leftDiv.id        = "leftDivId_" + counter; //set id
+     leftDiv.className = "leftDivClass";
+     $ (leftDiv).appendTo (rowDivId);
+
+     let leftDivId = $ ("#leftDivId_" + counter); //get id
+     leftDivId.css ({
+     "width"           : "30%",
+     "height"          : "100%",
+     "border"          : "0px solid orange",
+     "background-color": "lightGrey",
+     "position"        : "relative", //relative absolute
+     "float"           : "left"
+     });
+
+     /!** createElement right column
+     **!/
+     let rightDiv       = document.createElement ("div");
+     rightDiv.id        = "rightDivId_" + counter; //set id
+     rightDiv.className = "rightDivClass";
+     $ (rightDiv).appendTo (rowDivId);
+
+     let rightDivId = $ ("#rightDivId_" + counter); //get id
+     rightDivId.css ({
+     "width"           : "70%",
+     "height"          : "100%",
+     "border"          : "0px solid orange",
+     "background-color": "yellowGreen",
+     "position"        : "relative", //relative absolute
+     "float"           : "left"
+     });
+
+     /!** createElement image div inside right column **!/
+     let imgDiv       = document.createElement ("div");
+     imgDiv.id        = "imageDivId_" + counter; //set id
+     imgDiv.className = "imgDivClass";
+     $ (imgDiv).appendTo (rightDivId);
+
+     let imgDivId = $ ("#imageDivId_" + counter); //get id
+     imgDivId.css ({
+     /!*"padding-left"    : "-15px",
+     "padding-right"   : "-15px",*!/
+     "margin"          : "0px",
+     "background"      : "url(" + myImageSrc + ") no-repeat",
+     "background-size" : "cover", //cover 100%
+     "width"           : imgRightColumn, //"300px",
+     "height"          : imgNewHt, //"300px", //ImageHeight(origWt, origHt),
+     "border"          : "0px solid orange",
+     "background-color": "orange",
+     "position"        : "relative", //relative absolute
+     "float"           : "left"
+     //"overflow"        : "visible"//hidden; visible
+     });
+
+     /!** createElement: image name div inside image div **!/
+     let imageNameDiv       = document.createElement ("div");
+     imageNameDiv.className = "imageNameDivClass";
+     imageNameDiv.id        = "imageNameDivId_" + counter; //counter + counter2;// + counter3;
+     $ (imageNameDiv).appendTo (imgDivId); //imageContainer
+     imageNameDiv.innerHTML = imageNameString;
+     }
+     }*/
+
+    /*let imagesDiv = new CreateDivs ();
+     imagesDiv.fCreateProjectDiv (1, gdContainerId, "./images/elnido.jpg", "300px", "200px", "Image Name String");*/
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| CSS Styling |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    let fDivStyle = function (divClassName, divHeight, divWidth, borderColor) {
+      //twoColTest.fTwoColumns (90, 544);
+      //console.log ("twoColTest.LeftColumn2: ", twoColTest.LeftColumn);
+      //console.log ("twoColTest.RightColumn2: ", twoColTest.RightColumn);
+      divClassName.css ({
+        "width"       : divWidth,
+        "height"      : divHeight,
+        "position"    : "relative", //relative absolute
+        "float"       : "left",
+        "overflow"    : "hidden", //hidden; visible
+        //"border"  : "0px solid " + borderColor
+        //"border-bottom" : "10px solid",
+        "border-color": borderColor
+      });
+    };
+
+    let fImgDivStyle = function (divNameId, imgSrc, divHeight, divWidth) {
+      divNameId.css ({
+        //"padding-left"    : "-15px",
+        //"padding-right"   : "-15px",
+        "background"      : "url(" + imgSrc + ") no-repeat",
+        "background-size" : "cover", //cover 100%
+        "width"           : divWidth,
+        "height"          : divHeight,
+        "background-color": "teal",
+        "position"        : "relative", //relative absolute
+        "float"           : "left",
+        "display"         : "block",
+        //"overflow"        : "hidden", //hidden; visible
+        "border"          : "0px solid red"
+      });
+    };
+
+    var fParagStyle = function (divClassName) {
+      divClassName.css ({
+        "width"           : "100%",
+        //"height"          : "100%",
+        /*"font-family"     : "Open Sans",
+         "font-weight"     : "300",
+         "font-size"       : "1.2em",*/
+        "background-color": "beige",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+        //"display"         : "block",
+        //"border"          : "1px solid red"
+      });
+    };
+
+    /***************************| CLASS DECLARATIONS |***************************/
+    /*
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| CreateElementDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  Parent class template for creating basic generic divs.
+     *  To minimize the creation of multiple methods that are similar in functionalities.
+     ************************************************************************************!/
+     class CreateElementDiv {
+     constructor () { //elemNameClass, elemNameId, divName) {
+     //this.InstanceVarOrProperty = instanceVar;
+     //this.RightColumn           = rightColumn;
+     //this.LeftColumn            = columnDiv;
+     //this.ElemNameClass;// = elemNameClass;
+     //this.ElemNameId;//    = elemNameId;
+     //this.DivName;// = divName;
+     //console.log (`this.ElemNameClass: ${this.ElemNameClass}`); //undefined
+     //console.log (`elemNameId: ${elemNameId}`); //undefined
+     /!**-&#45;&#45;&#45;&#45; To access these properties outside, use classInstance.property -&#45;&#45;&#45;&#45;**!/
+     }
+
+     /!** Generic method for creating div element **!/
+     fCreateDiv (divName, title, counter, appendedTo) {
+     divName           = document.createElement ("div");
+     divName.id        = title + "Id_" + counter; //set id
+     divName.className = title + "Class";
+     //let divNameId     = $ ("#" + title + "Id_" + counter); //get id
+     $ (divName).appendTo (appendedTo);
+     }
+     }
+
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| ProjectDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  ProjectDiv class template is an extension of the CreateElementDiv class.
+     *  For creating project container divs.
+     ************************************************************************************!/
+     class ProjectDiv extends CreateElementDiv {
+     constructor () {
+     super ();
+     }
+
+     fCreateProjDiv (divName, title, counter, appendedTo, divHeight, divWidth) {
+     super.fCreateDiv (divName, title, counter, appendedTo);
+     let divClass = $ ("." + title + "Class"); //get class
+     fDivStyle (divClass, divHeight, divWidth, "grey");
+     }
+     }
+
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| ColumnDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  ColumnDiv class template is an extension of the CreateElementDiv class.
+     *  For creating column divs.
+     ************************************************************************************!/
+     class ColumnDiv extends CreateElementDiv {
+     constructor () {
+     super ();
+     }
+
+     fCreateColumnDiv (divName, title, counter, appendedTo, divHeight, divWidth) {
+     super.fCreateDiv (divName, title, counter, appendedTo);
+     let divClass = $ ("." + title + "Class"); //get class
+     fDivStyle (divClass, divHeight, divWidth, "yellowGreen");
+     }
+     }
+
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| ImgDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  ImgDiv class template is an extension of the CreateElementDiv class.
+     *  For creating image divs.
+     ************************************************************************************!/
+     class ImgDiv extends CreateElementDiv {
+     constructor () {
+     super ();
+     }
+
+     fCreateImgDiv (divName, title, counter, appendedTo, imgSrc, divHeight, divWidth) {
+     super.fCreateDiv (divName, title, counter, appendedTo);
+     //let divClass = $ ("." + title + "Class"); //get class
+     let divNameId = $ ("#" + title + "Id_" + counter); //get id
+     fImgDivStyle (divNameId, imgSrc, divHeight, divWidth);
+     }
+     }
+
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| TextContent Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  TextContent class template is an extension of the CreateElementDiv class.
+     *  For creating innerHTML divs.
+     ************************************************************************************!/
+     class TextContent extends CreateElementDiv {
+     constructor () {
+     super ();
+     }
+
+     fCreateTextDiv (title, counter, appendedTo, textString){ //, divHeight, divWidth) {
+     //super.fCreateDiv (divName, title, counter, appendedTo);
+     let textContentDiv           = document.createElement ("div");
+     let textContentDivClass = $ ("." + title + "Class"); //get class
+     let divNameId = $ ("#" + title + "Id_" + counter); //get id
+     //fImgDivStyle (divNameId, divHeight, divWidth);
+     $ (textContentDiv).appendTo (appendedTo);
+     textContentDiv.innerHTML = textString;
+     }
+     }
+
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| CreateElementA Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  Class template for creating basic "a" tag.
+     ************************************************************************************!/
+     class CreateElementAny {
+     constructor () { //elemNameClass, elemNameId, divName) {
+     //this.InstanceVarOrProperty = instanceVar;
+     //this.RightColumn           = rightColumn;
+     //this.LeftColumn            = columnDiv;
+     //this.ElemNameClass;// = elemNameClass;
+     //this.ElemNameId;//    = elemNameId;
+     //this.DivName;// = divName;
+     //console.log (`this.ElemNameClass: ${this.ElemNameClass}`); //undefined
+     //console.log (`elemNameId: ${elemNameId}`); //undefined
+     /!**-&#45;&#45;&#45;&#45; To access these properties outside, use classInstance.property -&#45;&#45;&#45;&#45;**!/
+     }
+
+     /!** Generic method for creating a element **!/
+     fCreateTag (divName, tagType, carouselName, title, counter, appendedTo) {
+     divName           = document.createElement (tagType);
+     divName.id        = title + "Id_" + counter; //set id
+     divName.className = carouselName; //title + "Class";
+     //let divNameId     = $ ("#" + title + "Id_" + counter); //get id
+     $ (divName).appendTo (appendedTo);
+     }
+     }
+     */
+    /***************************| END OF CLASS DECLARATIONS |***************************/
+
+    /***************************| CLASS DECLARATIONS |***************************/
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| TwoColumnsClass Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  Class to calculate the two columns within the image project container.
+     *  The provided percentage argument is use for the right column converted to pixel.
+     *  The left column will have the container's width minus the right column width.
+     ************************************************************************************/
+    class TwoColumnsClass {
+      constructor (rightColumn, leftColumn, imgNewHeight, imgResizePercent) {
+        this.RightColumn      = rightColumn;// = RightColumn; //right column property that's accessible outside through the Class
+        this.LeftColumn       = leftColumn;// = LeftColumn; //left column property
+        this.ImgNewHeight     = imgNewHeight;
+        this.imgResizePercent = imgResizePercent;
+        /**-&#45;&#45;&#45;&#45; To access these properties outside, use classInstance.property -&#45;&#45;&#45;&#45;**/
+      }
+
+      fTwoColumns (rightColumnPercentage, imgOrigWidth, imgOrigHeight) {
+        this.RightColumn = Math.round (gdContainerWidth * (rightColumnPercentage / 100));
+        this.LeftColumn  = Math.round (gdContainerWidth - this.RightColumn);
+
+        this.imgResizePercent = fRoundToTwo (this.RightColumn / imgOrigWidth);
+        this.ImgNewHeight     = Math.round (imgOrigHeight * this.imgResizePercent);
+        //console.log("this.imgResizePercent: ", this.imgResizePercent);
+        //imgResizePercent      = fRoundToTwo (imgResizePercent);
+        //console.log (`Right Column: ${this.RightColumn} | Left Column: ${this.LeftColumn}`);
+      }
+
+      static fReturnTwoColumns () {
+        console.log ("This is a static method inside a class");
+      }
+
+      fImgResPerc (origImgWidth, origImgHeight, imgRightColumn) {
+        /*let imgOrigWidth      = origImgWidth;
+         let imgOrigHeight     = origImgHeight;
+         let imgResizePercent  = imgRightColumn / imgOrigWidth;
+         imgResizePercent      = fRoundToTwo (imgResizePercent);
+         this.imgResizePercent = imgResizePercent;
+         this.ImgNewHeight     = Math.round (imgOrigHeight * imgResizePercent);*/
+
+        /*aImgsResizePercent[aImgsResizePercent.length] = imgResizePercent; //push to array
+         aImgsNewWidth[aImgsNewWidth.length]           = this.RightColumn; //push to array
+         aImgsNewHeight[aImgsNewHeight.length]         = this.ImgNewHeight; //push to array*/
+
+        /*console.log ("imgOrigWidth: ", imgOrigWidth);
+         console.log ("imgRightColumn: ", imgRightColumn);
+         console.log ("imgResizePercent: ", imgResizePercent);
+         console.log ("imgOrigHeight: ", imgOrigHeight);
+         console.log ("this.ImgNewHeight: ", this.ImgNewHeight);*/
+      }
+    }
+
+    /** Static Test **/
+    TwoColumnsClass.fReturnTwoColumns ();
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Columns: Class Instances |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    let twoColTest = new TwoColumnsClass ();
+    //twoColTest.fTwoColumns (50, (gdContainerWidth/2));
+    //twoColTest.fTwoColumns (80, 544);
+    /*console.log ("twoColTest.LeftColumn: ", twoColTest.LeftColumn);
+     console.log ("twoColTest.RightColumn: ", twoColTest.RightColumn);
+     console.log ("gdContainerWidth: ", gdContainerWidth);*/
+    let twoColumnsImgProjects = new TwoColumnsClass ();
+    let twoColumnsParagProjects = new TwoColumnsClass ();
+    let twoColumnsImages = new TwoColumnsClass ();
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| End CreateElementDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| CreateElementDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  Parent class template for creating basic generic divs.
+     *  To minimize the creation of multiple methods that are similar in functionalities.
+     ************************************************************************************/
+    class CreateElementDiv {
+      constructor () {
+        //this.divName;
+        //elemNameClass, elemNameId, divName) {
+        //this.InstanceVarOrProperty = instanceVar;
+        //this.RightColumn           = rightColumn;
+        //this.LeftColumn            = columnDiv;
+        //this.ElemNameClass;// = elemNameClass;
+        //this.ElemNameId;//    = elemNameId;
+        //this.DivName;// = divName;
+        //console.log (`this.ElemNameClass: ${this.ElemNameClass}`); //undefined
+        //console.log (`elemNameId: ${elemNameId}`); //undefined
+        /**-&#45;&#45;&#45;&#45; To access these properties outside, use classInstance.property -&#45;&#45;&#45;&#45;**/
+      }
+
+      /** Generic method for creating div element **/
+      fCreateDiv (title, counter, appendedTo) {
+        this.divName           = document.createElement ("div");
+        this.divName.id        = title + "Id_" + counter; //set id
+        this.divName.className = title + "Class"; //set className
+        //let divNameId     = $ ("#" + title + "Id_" + counter); //get id
+        $ (this.divName).appendTo (appendedTo);
+        //divName.innerHTML = ("&lt;!&ndash;/*****************/&ndash;&gt;"); //for testing
+      }
+    }
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| ProjectDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  ProjectDiv class template is an extension of the CreateElementDiv class.
+     *  For creating project container divs.
+     ************************************************************************************/
+    class ProjectDiv extends CreateElementDiv {
+      constructor () {
+        super ();
+      }
+
+      fCreateProjDiv (title, counter, appendedTo, divHeight, divWidth) {
+        super.fCreateDiv (title, counter, appendedTo);
+        let divClass = $ ("." + title + "Class"); //get class
+        fDivStyle (divClass, divHeight, divWidth, "grey");
+      }
+    }
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| ColumnDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  ColumnDiv class template is an extension of the CreateElementDiv class.
+     *  For creating column divs.
+     ************************************************************************************/
+    class ColumnDiv extends CreateElementDiv {
+      constructor () {
+        super ();
+      }
+
+      fCreateColumnDiv (title, counter, appendedTo, divHeight, divWidth) {
+        super.fCreateDiv (title, counter, appendedTo);
+        let divClass = $ ("." + title + "Class"); //get class
+        fDivStyle (divClass, divHeight, divWidth, "red");
+        //divClass.css({"height": "250px"}); //testing
+      }
+    }
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| ImgDiv Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  ImgDiv class template is an extension of the CreateElementDiv class.
+     *  For creating image divs.
+     ************************************************************************************/
+    class ImgDiv extends CreateElementDiv {
+      constructor () {
+        super ();
+      }
+
+      fCreateImgDiv (title, counter, appendedTo, imgSrc, divHeight, divWidth) {
+        super.fCreateDiv (title, counter, appendedTo);
+        //let divClass = $ ("." + title + "Class"); //get class
+        let divNameId = $ ("#" + title + "Id_" + counter); //get id
+        fImgDivStyle (divNameId, imgSrc, divHeight, divWidth);
+      }
+    }
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| TextContent Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  TextContent class template is an extension of the CreateElementDiv class.
+     *  For creating innerHTML divs.
+     ************************************************************************************/
+    class TextContent extends CreateElementDiv {
+      constructor () {
+        super ();
+        //this.divName;
+      }
+
+      fCreateTextDiv (title, counter, appendedTo, textString) { //, divHeight, divWidth) { //textString
+        super.fCreateDiv (title, counter, appendedTo);
+        this.divName.innerHTML = textString;
+        //this.divName.href      = "#modalCarousel"; //test:ignored
+
+        //let textContentDiv       = document.createElement ("div");
+        //let textContentDiv.className = title + "Class";
+        //let textContentDivId     = $ ("#" + title + "Id_" + counter); //get id
+        //fImgDivStyle (divNameId, divHeight, divWidth);
+        //$ (textContentDiv).appendTo (appendedTo);
+        /*let textContentDivClass  = $ ("." + title + "Class"); //get class
+         fParagStyle (textContentDivClass);*/
+        //textContentDivClass.css({"height": "50px"}); //testing
+        //fDivStyle (textContentDivClass, divHeight, divWidth, "red");
+        //console.log("counter: ", counter);
+      }
+    }
+
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| CreateElementA Class |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+    /** Description:
+     *  Class template for creating basic "a" tag.
+     ************************************************************************************/
+    class CreateElementAny {
+      constructor () { //elemNameClass, elemNameId, divName) {
+        //this.InstanceVarOrProperty = instanceVar;
+        //this.RightColumn           = rightColumn;
+        //this.LeftColumn            = columnDiv;
+        //this.ElemNameClass;// = elemNameClass;
+        //this.ElemNameId;//    = elemNameId;
+        //this.DivName;// = divName;
+        //console.log (`this.ElemNameClass: ${this.ElemNameClass}`); //undefined
+        //console.log (`elemNameId: ${elemNameId}`); //undefined
+        /**-&#45;&#45;&#45;&#45; To access these properties outside, use classInstance.property -&#45;&#45;&#45;&#45;**/
+      }
+
+      /** Generic method for creating a tag element **/
+      fCreateTag (tagType, carouselName, title, counter, appendedTo) {
+        let divName       = document.createElement (tagType);
+        divName.id        = title + "Id_" + counter; //set id
+        divName.className = carouselName; //title + "Class";
+        divName.href      = "#modalCarousel";
+        //let divNameId     = $ ("#" + title + "Id_" + counter); //get id
+        $ (divName).appendTo (appendedTo);
+
+        /*if (tagType === "a") {
+         divName.href = "#modalCarousel"
+         } else {
+         tagType
+         }*/
+      }
+    }
+
+    /***************************| END OF CLASS DECLARATIONS |***************************/
+
+    let projectContainer = new ProjectDiv ();
+    let columnDiv = new ColumnDiv ();
+    //let rightColumn = new ColumnDiv ();
+    //let imgContainer = new ColumnDiv ();
+    let imgDiv = new ImgDiv ();
+    let textDiv = new TextContent ();
+
+    let tagElement = new CreateElementAny ();
+    let rightArrowShader = new CreateElementAny ();
+    let leftArrow = new CreateElementAny ();
+    let rightArrow = new CreateElementAny ();
+
+    let titolo = "FilipinasProj";
+    let leftTitolo = "XXXFilipinasProjLeftCol";
+    let rightTitolo = "XXXFilipinasProjRightCol";
+    let imgContainerTitolo = "FilipinasImgContainr";
+    let imgDivTitolo = "FilipinasImgDiv";
+    let counter = 0;
+
+    /*
+     /!** Project Container **!/
+     projectContainer.fCreateProjDiv ("projDiv", titolo, counter, gdContainer, "0px", "0px");
+     let projDivId = $ ("#" + titolo + "Id_" + counter);
+
+     /!*TEST*!/
+     projectContainer.fCreateProjDiv ("projDiv2", titolo, 2, gdContainer, "0px", "0px");
+     let projDivId2 = $ ("#" + titolo + "Id_" + 2);
+
+     /!** Project Left Column **!/
+     columnDiv.fCreateColumnDiv ("projLeftDiv", leftTitolo, counter, projDivId, "20px", "0%");
+     let projLeftColDivId = $ ("#" + leftTitolo + "Id_" + counter);
+
+     /!** Project Right Column **!/
+     columnDiv.fCreateColumnDiv ("projRightDiv", rightTitolo, counter, projDivId, "20px", "0%");
+     let projRightColDivId = $ ("#" + rightTitolo + "Id_" + counter);
+
+     /!** Project Image Container **!/
+     let imgContainerWidth = (200 * 3) + 10;
+     columnDiv.fCreateColumnDiv ("imgContainer", imgContainerTitolo, counter, projRightColDivId, "100px", imgContainerWidth);
+     let imgContainerDivId = $ ("#" + imgContainerTitolo + "Id_" + counter);
+
+     /!** Project Image Div **!/
+     let aMyImgSrc = ["./images/elnido.jpg", "./images/PersonalFresh/PF-00.jpg", "./images/birdcage.jpg"];
+     let imagesCount = 3;
+     for (let count = 0; count < imagesCount; count++) {
+     imgDiv.fCreateImgDiv ("imgDiv", imgDivTitolo, count, imgContainerDivId, aMyImgSrc[count], "200px", imgContainerWidth);
+     let imgDivId = $ ("#" + imgDivTitolo + "Id_" + count);
+     }
+     */
+
+    //let projDivIds;
+    let projLeftColDivIds;
+    let projRightColDivIds;
+    let imgContainerDivIds;
+    //let leftShaderIds;
+    //let rightShaderIds;
+
+    let aProjDivIds = [];
+    let aLeftShaderIds = [];
+    let aRightShaderIds = [];
+
+    let aProjParagDivIds = [];
+
+
+    /** Arrow function test **/
+    //@formatter off : doesn't work!
+    let x = a => a;
+    console.log ("x: ", x ("Hello Fats!"));
+
+    let xx = (aa) => {
+      return aa
+    }
+    console.log ("xx: ", xx ("Hello Fats 2!"));
+    /** End Arrow function test **/
+
+    /*********************( PROMISE AJAX • START •  JSON )*********************/
+    if (window.Promise) {
+      console.log ('Promise found');
+    }
+    // let fRunAjax = function () {
+    let fRunAjax = () => {
+      console.log ("fRunAjax:===-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;•");
+      /*$.ajax ({
+       url     : "./src/json/ajaxData2_simple.json",
+       type    : "GET",
+       dataType: "json",
+       cache   : "false",
+       success : function (data) {
+       console.log ("data: ", data);*/
+      let promise = $.get ("./src/json/ajaxData2_simple.json");
+      //promise.then ((data) => {
+      promise.then (function (data) { //})
+
+          let i   = 0;
+          let ii  = 0;
+          let iii = 0;
+
+          console.log ("************************************************");
+
+          /**-&#45;&#45;&#45;&#45;===| SECTIONS |===-&#45;&#45;&#45;&#45;**/
+          for (let sect of data.GDSite) {
+            //console.log ("sect: ", sect);
+            i++;
+
+            twoColumnsParagProjects.fTwoColumns (80, 0, 0);
+            //console.log("twoColumnsParagProjects.LeftColumn: ", twoColumnsParagProjects.LeftColumn);
+            //console.log("twoColumnsParagProjects.RightColumn: ", twoColumnsParagProjects.RightColumn);
+
+            /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Sections Container |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+            projectContainer.fCreateProjDiv (sect.title + "_Section", i, gdContainer, "auto", gdContainerWidth);
+            let sectDivIds = $ ("#" + sect.title + "_Section" + "Id_" + i);//get ids
+            //console.log("sectDivIds: ", sectDivIds);//WebGraphicsDesigns_SectionId_1
+            //aProjDivIds[aProjDivIds.length] = projDivIds;
+
+            /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Sections Left Column |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+            columnDiv.fCreateColumnDiv (sect.title + "_Left", i, sectDivIds, "20px", twoColumnsParagProjects.LeftColumn);
+            //columnDiv.fCreateColumnDiv ("left", i, sectDivIds, "100px", twoColumnsImgProjects.LeftColumn);
+            //let sectLeftColDivIds = $ ("#" + leftTitolo + "Id_" + i);
+
+            /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Sections Right Column |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+            columnDiv.fCreateColumnDiv (sect.title + "_Right", i, sectDivIds, "auto", twoColumnsParagProjects.RightColumn);
+            let sectRightColDivIds = $ ("#" + sect.title + "_Right" + "Id_" + i);
+            //console.log("sectRightColDivIds: ", sectRightColDivIds);
+
+            /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Sections Title |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+            textDiv.fCreateTextDiv ("sectTitle", i, sectRightColDivIds, sect.sectionTitle);//, "300px", "80%");//, "100px", "80%");
+            //console.log("sect.sectionTitle: ", sect.sectionTitle);
+
+            //allSections.fBuildSectionHeaderContainer (sect.sectionTitle, i);
+            //projectGDImgs.fCreateRowDiv (i, gdContainerId); // "./images/elnido.jpg", "300px", "200px", "Image Name String");
+
+            /**-&#45;&#45;&#45;&#45;===| PROJECTS: ROW |===-&#45;&#45;&#45;&#45;**/
+            for (let proj of sect.projects) {
+              ii++;
+              /*
+               /!** Project Container **!/
+               projectContainer.fCreateProjDiv ("projDiv", proj.title, ii, gdContainer, "100px", gdContainerWidth);
+               let projDivIds                  = $ ("#" + proj.title + "Id_" + ii);//get ids
+               aProjDivIds[aProjDivIds.length] = projDivIds; //push to array
+               //console.log("projDivIds: ", projDivIds);
+               //fAnimateHeightWidth (projDivIds, 50, gdContainerWidth);
+
+               /!** Project Left Column **!/
+               columnDiv.fCreateColumnDiv ("projLeftDiv", leftTitolo, ii, projDivIds, "100px", "30%");
+               //let projLeftColDivIds = $ ("#" + leftTitolo + "Id_" + ii);
+
+               /!** Project Right Column **!/
+               columnDiv.fCreateColumnDiv ("projRightDiv", rightTitolo, ii, projDivIds, "100px", "70%");
+               let projRightColDivIds = $ ("#" + rightTitolo + "Id_" + ii);
+
+               /!** Carousel Control: Left **!/
+               tagElement.fCreateTag ("tagElement", "a", "carousel-control left", "leftCarousel", ii, projRightColDivIds);
+               let leftShaderIds = $ ("#leftCarouselId_" + ii);//get ids
+               //aLeftShaderIds[aLeftShaderIds.length] = leftShaderIds; //push to array
+               tagElement.fCreateTag ("leftArrow", "i", "glyphicon glyphicon-chevron-left", "leftArrow", ii, leftShaderIds);
+
+               /!** Carousel Control: Right **!/
+               tagElement.fCreateTag ("rightArrowShader", "a", "carousel-control right", "rightCarousel", ii, projRightColDivIds);
+               let rightShaderIds = $ ("#rightCarouselId_" + ii);//get ids
+               //aRightShaderIds[aRightShaderIds.length] = rightShaderIds; //push to array
+               tagElement.fCreateTag ("rightArrow", "i", "glyphicon glyphicon-chevron-right", "rightArrow", ii, rightShaderIds);
+
+               /!** Project Paragraph Container **!/
+               projectContainer.fCreateProjDiv ("projParagDiv", "paragraph_" + proj.title, ii, gdContainer, "100px", gdContainerWidth);
+               let projParagDivIds = $ ("#" + "paragraph_" + proj.title + "Id_" + ii);//get ids
+               aProjParagDivIds[aProjParagDivIds.length] = projParagDivIds; //push to array
+
+               /!** Project Paragraph Left Column **!/
+               columnDiv.fCreateColumnDiv ("projLeftDiv", "projLeftDiv", ii, projParagDivIds, "100px", "20%");
+               //let projLeftColDivIds = $ ("#" + leftTitolo + "Id_" + ii);
+
+               /!** Project Paragraph Right Column **!/
+               columnDiv.fCreateColumnDiv ("projRightDiv", "projRightDiv", ii, projParagDivIds, "100px", "80%");
+               let projParagraphDivIds = $ ("#projRightDivId_" + ii);
+
+               textDiv.fCreateTextDiv ("projTitle", ii, projParagraphDivIds, proj.title);//, "100px", "80%");
+               console.log (`proj.title: ${proj.title}`);
+               */
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Screen Queries |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              if (gdContainerWidth <= 500) {
+                proj.columnPercentage = 100;
+              } else {
+                proj.columnPercentage = proj.columnPercentage;
+              }
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| End Screen Queries |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+
+              //twoColTest.fTwoColumns (80, 544);
+              /*twoColTest.fTwoColumns (proj.columnPercentage, proj.imagesWidth, proj.imagesHeight);
+               console.log(`
+               twoColTest.LeftColumn: ${twoColTest.LeftColumn}
+               proj.imagesWidth: ${proj.imagesWidth} : twoColTest.RightColumn: ${twoColTest.RightColumn}
+               proj.imagesHeight: ${proj.imagesHeight} : twoColTest.ImgNewHeight: ${twoColTest.ImgNewHeight}
+               gdContainerWidth: ${gdContainerWidth}
+               twoColTest.imgResizePercent: ${twoColTest.imgResizePercent}
+               `);*/
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Columns: Class Instances Invocation |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              twoColumnsImgProjects.fTwoColumns (proj.columnPercentage, proj.imagesWidth, proj.imagesHeight);
+
+              twoColumnsParagProjects.fTwoColumns (80, proj.imagesWidth, proj.imagesHeight);
+
+              /*console.log ("twoColTest.LeftColumn: ", twoColTest.LeftColumn);
+               console.log ("twoColTest.RightColumn: ", twoColTest.RightColumn);
+               console.log ("gdContainerWidth: ", gdContainerWidth);
+               console.log ("twoColTest.imgResizePercent: ", twoColTest.imgResizePercent);*/
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Image Container |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              projectContainer.fCreateProjDiv (proj.title + "_Proj", ii, gdContainer, "100%", gdContainerWidth);
+              let projDivIds                  = $ ("#" + proj.title + "_Proj" + "Id_" + ii);//get ids
+              aProjDivIds[aProjDivIds.length] = projDivIds; //push to array use for animation
+              //console.log("projDivIds: ", projDivIds);
+              //fAnimateHeightWidth (projDivIds, 50, gdContainerWidth);
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Image Left Column |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              columnDiv.fCreateColumnDiv (proj.title + "_Left", ii, projDivIds, "100px", twoColumnsImgProjects.LeftColumn);
+              //columnDiv.fCreateColumnDiv ("left", ii, projDivIds, "100px", twoColumnsImgProjects.LeftColumn);
+              //let projLeftColDivIds = $ ("#" + proj.title + "Id_" + ii);
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Image Right Column |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              columnDiv.fCreateColumnDiv (proj.title + "_Right", ii, projDivIds, twoColumnsImgProjects.ImgNewHeight, twoColumnsImgProjects.RightColumn);
+              let projRightColDivIds = $ ("#" + proj.title + "_Right" + "Id_" + ii);
+              //console.log ("projRightColDivIds ii: ", projRightColDivIds);
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Right Column Image Fluid-Container |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              let imageFluidContainerWidth = twoColumnsImgProjects.RightColumn * proj.images.length;
+              console.log ("imageFluidContainerWidth: ", imageFluidContainerWidth);
+
+              columnDiv.fCreateColumnDiv (proj.title + "_FluidContainer_", ii, projRightColDivIds, twoColumnsImgProjects.ImgNewHeight, imageFluidContainerWidth);
+              let imageContainerIds = $ ("#" + proj.title + "_FluidContainer_" + "Id_" + ii);
+              //let imageContainerIds = $ ("#imageContainerId_" + ii);
+              //console.log ("imageContainerIds: ", imageContainerIds);
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Carousel Control: Left |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              tagElement.fCreateTag ("a", "carousel-control left", "leftCarousel", ii, projRightColDivIds);
+              let leftShaderIds = $ ("#leftCarouselId_" + ii);//get ids
+              //aLeftShaderIds[aLeftShaderIds.length] = leftShaderIds; //push to array
+              tagElement.fCreateTag ("i", "glyphicon glyphicon-chevron-left", "leftArrow", ii, leftShaderIds);
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Carousel Control: Right |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              tagElement.fCreateTag ("a", "carousel-control right", "rightCarousel", ii, projRightColDivIds);
+              let rightShaderIds = $ ("#rightCarouselId_" + ii);//get ids
+              //aRightShaderIds[aRightShaderIds.length] = rightShaderIds; //push to array
+              tagElement.fCreateTag ("i", "glyphicon glyphicon-chevron-right", "rightArrow", ii, rightShaderIds);
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Paragraph Container |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              projectContainer.fCreateProjDiv ("paragraph_" + proj.title, ii, gdContainer, "100%", gdContainerWidth);
+              let projParagDivIds                       = $ ("#" + "paragraph_" + proj.title + "Id_" + ii);//get ids
+              aProjParagDivIds[aProjParagDivIds.length] = projParagDivIds; //push to array for animation
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Paragraph Left Column |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              columnDiv.fCreateColumnDiv ("projLeftColumn", ii, projParagDivIds, "10px", twoColumnsParagProjects.LeftColumn);
+              let projLeftColDivIds = $ ("#projLeftColumnId_" + ii);
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Paragraph Right Column |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              columnDiv.fCreateColumnDiv ("projRightColumn", ii, projParagDivIds, "100%", twoColumnsParagProjects.RightColumn);
+              let projParagRightDivIds = $ ("#projRightColumnId_" + ii); //get Ids
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Title |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              textDiv.fCreateTextDiv ("projTitle", ii, projParagRightDivIds, proj.title);//, "300px", "80%");//, "100px", "80%");
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Sub-Title |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              textDiv.fCreateTextDiv ("projSubTitle", ii, projParagRightDivIds, proj.subTitle); //, "100px", "80%");
+
+              /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Descriptions |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+              textDiv.fCreateTextDiv ("projDescription", ii, projParagRightDivIds, proj.projDescription);
+
+              /** Test string template literal **/
+              let templateLiteralTest = `
+                <div> <h4>${proj.subTitle}</h4></div>
+              `;
+
+              document.getElementById (proj.title + "_LeftId_" + ii).innerHTML = templateLiteralTest;
+              //projLeftColDivIds.innerHTML = templateLiteralTest;
+
+              /*
+               /!** Project Left Column **!/
+               columnDiv.fCreateColumnDiv ("projLeftDiv", proj.title, ii, projDivIds, "20px", "30%");
+               projLeftColDivIds = $ ("#" + leftTitolo + "Id_" + ii);
+
+               /!** Project Right Column **!/
+               columnDiv.fCreateColumnDiv ("projRightDiv", rightTitolo, ii, projDivIds, "20px", "70%");
+               projRightColDivIds = $ ("#" + rightTitolo + "Id_" + ii);
+
+               /!** Project Image Container **!/
+               let imgContainerWidth = (200 * 3) + 10;
+               imgContainer.fCreateColumnDiv ("imgContainer", imgContainerTitolo, ii, projRightColDivIds, "100px", imgContainerWidth);
+               imgContainerDivIds = $ ("#" + imgContainerTitolo + "Id_" + ii);
+               */
+
+              /*
+               /!** Calculates right columns width **!/
+               twoColumnsTestInstance.fTwoColumns (proj.columnPercentage);
+
+               aColumnPercentage[aColumnPercentage.length] = proj.columnPercentage; //push to array
+
+               /!** Calculates div heights **!/
+               twoColumnsTestInstance.fImgResPerc (proj.imagesWidth, proj.imagesHeight,
+               twoColumnsTestInstance.RightColumn);
+
+               aImgsOrigWidth[aImgsOrigWidth.length]   = proj.imagesWidth; //push to array
+               aImgsOrigHeight[aImgsOrigHeight.length] = proj.imagesHeight; //push to array
+
+               let imageContainerWidth = proj.images.length * twoColumnsTestInstance.RightColumn + 100;//proj.imagesWidth +100;
+               console.log ("imageContainerWidth:", imageContainerWidth, "• images count:", proj.images.length, "•", proj.title);
+
+               /!*allSections.fBuildProjectContainer (
+               ii, proj.title, proj.title, proj.subTitle,
+               proj.projDescription, imageContainerWidth,
+               ownImageResizePerc.ImgNewHeight);*!///, ("My Unique Tag:  " + proj.title));
+               console.log ("=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====");
+               projectGDImgs.fCreateProjectDiv (ii, gdContainerId); //, twoColumnsTestInstance.ImgNewHeight);
+
+               let rowDiv = "imgRowDiv";
+               projectGDImgs.fCreateRowDiv (rowDiv, ii, twoColumnsTestInstance.ImgNewHeight);
+
+               projectGDImgs.fCreateLeftDiv (ii, twoColumnsTestInstance.LeftColumn);
+               projectGDImgs.fCreateRightDiv (ii, twoColumnsTestInstance.RightColumn, twoColumnsTestInstance.ImgNewHeight, imageContainerWidth);
+
+               projectGDImgs.fCreateRowParagDiv (ii);
+               projectGDImgs.fCreateLeftParagDiv (ii, twoColumnsTestInstance.LeftColumn);
+               projectGDImgs.fCreateRightParagDiv (ii, twoColumnsTestInstance.RightColumn, proj.title, proj.subTitle, proj.projDescription);
+               */
+
+              //projectGDImgs.fCreateRowDiv (i+ii, gdContainerId, "200px");
+              //projectGDImgs.fCreateProjectDiv (ii, gdContainer);
+              //projectGDPar.fCreateRowDiv (ii, twoColumnsTestInstance.ImgNewHeight);
+              //projectGDPar.fCreateLeftDiv (ii, twoColumnsTestInstance.LeftColumn);
+              //projectGDPar.fCreateRightDiv (ii, twoColumnsTestInstance.RightColumn, twoColumnsTestInstance.ImgNewHeight, imageContainerWidth);
+
+              /*console.log (
+               `
+               |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| i:${i} iii:${iii}
+               Project Log Info | Project: ${proj.title} | ii: ${ii}
+               Project Right Column Percentage: ${proj.columnPercentage}
+               RowDiv Ht: ${twoColumnsTestInstance.ImgNewHeight}
+               `);*/
+
+              /**-&#45;&#45;&#45;&#45;===| IMAGES |===-&#45;&#45;&#45;&#45;**/
+              for (let imgs of proj.images) {
+                iii++;
+                //console.log (`iii: ${iii}`);
+                //console.log ("iii: ", iii);
+
+                //twoColumnsImgProjects.fTwoColumns (proj.columnPercentage, proj.imagesWidth, proj.imagesHeight);
+
+                //console.log ("projRightColDivIds iii: ", projRightColDivIds);
+
+                /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;===| Project Right Column Image Container |===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+                /*let imageFluidContainerWidth = twoColumnsImgProjects.RightColumn * proj.images.length;
+                 console.log ("imageFluidContainerWidth: ", imageFluidContainerWidth);*/
+
+                /*columnDiv.fCreateColumnDiv ("imageContainer", iii, projRightColDivIds, twoColumnsImgProjects.ImgNewHeight, imageFluidContainerWidth);
+                 let imageContainerIds = $ ("#imageContainerId_" + 1);*/
+                //let imageContainerIds2 = $ ("#imageContainerId_" + iii);
+                //console.log ("imageContainerIds: ", imageContainerIds);
+                //console.log ("imageContainerIds2: ", imageContainerIds2);
+
+                twoColumnsImages.fTwoColumns (proj.columnPercentage, proj.imagesWidth, proj.imagesHeight);
+
+                let myImage    = new Image ();
+                let imagesPath = "./images/" + proj.title + "/";
+                myImage.src    = imagesPath + imgs.imgName;
+                //console.log ("myImage.src: ", myImage.src);
+
+                //imgDiv.fCreateImgDiv (title, counter, appendedTo, imgSrc, divHeight, divWidth);
+                imgDiv.fCreateImgDiv ("imageTitle", iii, imageContainerIds, myImage.src, twoColumnsImages.ImgNewHeight, twoColumnsImages.RightColumn);
+
+                //twoColumnsTestInstance.fImgResPerc (proj.imagesWidth, proj.imagesHeight, twoColumnsTestInstance.RightColumn);
+
+                /*let myImage    = new Image ();
+                 let imagesPath = "./images/" + proj.title + "/";
+                 myImage.src    = imagesPath + imgs.imgName;
+
+                 imgNewHt = twoColumnsTestInstance.ImgNewHeight;
+                 imgNewWt = twoColumnsTestInstance.RightColumn;
+                 imgDiv   = "imgDiv";
+                 projectGDImgs.fCreateImageDiv (imgDiv, iii, myImage.src, imgNewWt, imgNewHt);
+                 /!*fAnimateHeight (imgDiv, imgNewHt);
+                 fAnimateWidth(imgDiv, imgNewWt);*!/
+
+                 projectGDImgs.fCreateImageNameDiv (iii, imgs.imgTitle);*/
+
+                /*allSections.fBuildImageDivs (
+                 proj.title, iii, myImage.src, imgs.imgTitle,
+                 twoColumnsTestInstance.RightColumn,
+                 ownImageResizePerc.ImgNewHeight);
+
+                 ownImageResizePerc.fImgResPerc (
+                 proj.imagesWidth, proj.imagesHeight,
+                 twoColumnsTestInstance.RightColumn);*/
+
+                /*console.log (
+                 `
+                 |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| i:${i} ii:${ii}
+                 Images Log Info | Title: ${proj.title} | iii: ${iii}
+                 Orig Width: ${proj.imagesWidth} | Orig Height: ${proj.imagesHeight}
+                 Image Resize Percentage: ${twoColumnsTestInstance.imgResizePercent}
+                 New Width: ${twoColumnsTestInstance.RightColumn} | New Height: ${twoColumnsTestInstance.ImgNewHeight}
+                 imgName: ${imgs.imgName} | imgTitle: ${imgs.imgTitle}
+                 `);*/
+
+              }
+            }
+          }
+          console.log ("************************************************");
+        },
+        /** promise failure **/
+        function (data) {
+          console.log ("Request Failed!")
+        }
+      )
+
+    } //);
+    //};
+
+    fRunAjax ();
+    /*********************( AJAX • END •  JSON )*********************/
+
+    /*
+     let projectDiv = new CreateElementDiv ();
+     let sectionDiv = new CreateElementDiv ();
+     let sectionChildDiv = new CreateElementDiv ();
+
+     /!* these will be inside ajax call *!/
+     let titolo = "FilipinasProj";
+     let sectLeftTitolo = "FilipinasLeftSect";
+     let sectRightTitolo = "FilipinasRightSect";
+     let sectRightChildTitolo = "FilipinasRightChildSect";
+
+     let counter = 0;
+
+     projectDiv.fCreateDiv ("projDiv", titolo, counter, gdContainer, gdContainerWidth, "300px");
+
+     //let projName = $ ("#FilipinasProjId_0"); FilipinasProjClass
+     //let projName = $ ("." + titolo + "Class");
+     let projName = document.getElementsByClassName(titolo + "Class")
+     console.log("projName: ", projName);
+
+
+     //let rightDivChild = $ ("." + sectRightTitolo + "Class");
+     //let rightDivChild = $ (".FilipinasRightSectClass");
+
+     let rightDivChild = document.getElementsByClassName(sectRightTitolo + "Class")
+
+     //FilipinasRightSectClass
+     //console.log(`rightDivChild: ${rightDivChild}`);
+     //console.log("rightDivChild: ", rightDivChild);
+     //console.log(`sectionDiv.divNameId: ${sectionDiv.elemNameId}`);
+
+     sectionDiv.fCreateDiv ("sectLeftDiv", sectLeftTitolo, counter, projName, "30%", "100px");
+     sectionDiv.fCreateDiv ("sectRightDiv", sectRightTitolo, counter, projName, "70%", "200px");
+
+     sectionDiv.fCreateDiv ("sectRightDivChild", sectRightChildTitolo, counter, rightDivChild, "50%", "150px");
+
+     sectionDiv.ElemNameId;
+     console.log (`sectionDiv.ElemNameId: ${sectionDiv.ElemNameId}`);
+
+     /!** Test to manipulate the width **!/
+     /!** cache the DOM **!/
+     let rowDivId = $ ("#rowDivId_1");
+     let projDivId = $ ("#" + titolo + "Id_" + counter);
+     let imgDivId = $ ("#imageDivId_1");
+
+     /!*rowDivId.css ({
+     "width": "600px",
+     "height": "600px"
+     });*!/
+     fAnimateHeightWidth (rowDivId, 600, 600);
+
+     /!*imgDivId.css ({
+     "width": "600px",
+     "height": "100%"
+     });*!/
+     fAnimateHeightWidth (imgDivId, 600, 600);
+     */
+
+    /***&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| Window Resize Function |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;***/
+
+    let fOnWindowResize = function () {
+      gdContainerWidth = (gdContainer.width ());
+      //fAnimateHeightWidth (rowDivId, 600, gdContainerWidth);
+      //fAnimateHeightWidth (imgDivId, "auto", "100%");
+      /** Project Container **/
+      fAnimateHeightWidth (projDivId, 210, gdContainerWidth, animTym);
+      fAnimateHeightWidth (projDivId2, 210, gdContainerWidth, animTym);
+      /** Project Left Column **/
+      fAnimateHeightWidth (projLeftColDivId, 90, "30%", animTym);
+      /** Project Right Column **/
+      fAnimateHeightWidth (projRightColDivId, 200, "70%", zeroTym);
+
+      /** Project Right Column Width **/
+      let rightColumnWidth = projRightColDivId.width ();
+      //console.log("rightColumnWidth: ",rightColumnWidth);
+
+      /** Project Image Container **/
+      imgContainerWidth = (rightColumnWidth * 3) + 10;
+      //imgContainer.fCreateColumnDiv ("imgContainer", imgContainerTitolo, counter, projRightColDivId, "100px", imgContainerWidth);
+      fAnimateHeightWidth (imgContainerDivId, "auto", imgContainerWidth, zeroTym);
+
+      /** Project Images **/
+      for (let count = 0; count < imagesCount; count++) {
+        //imgDiv.fCreateImgDiv ("imgDiv", imgDivTitolo, count, imgContainerDivId, aMyImgSrc[count], "200px", "200px");
+        let imgDivId = $ ("#" + imgDivTitolo + "Id_" + count);
+        fAnimateHeightWidth (imgDivId, "auto", rightColumnWidth, zeroTym);
+      }
+
+      /** from Ajax **/
+      fAnimateHeightWidth (aProjDivIds, 100, gdContainerWidth, animTym);
+      fAnimateHeightWidth (aProjParagDivIds, 100, gdContainerWidth, animTym);
+
+      //fRunAjax ();
+
+    };
+
+    //fOnWindowResize ();
+
+    //$ (window).on ('resize', fOnWindowResize);
+    /**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| End Window Resize Function |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**/
+
+    /*
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| Test code from GDTwoColumns.js |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  Taken a project section code to compare with the dynamically generated divs
+     *******************************************************************************!/
+     /!************************=| OWNPHONES SECTION |=************************!/
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| OwnPhones Reference Variables |=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     var ownImgTitle = $ ("#ownImagesChamberId .liRImages h5");
+
+     var ownImagesChamberId = $ ("#ownImagesChamberId");
+     var ownImg1Id = $ ("#ownImg1Id");
+     var ownImg2Id = $ ("#ownImg2Id");
+     var ownImg3Id = $ ("#ownImg3Id");
+     var ownImg4Id = $ ("#ownImg4Id");
+     var ownImg5Id = $ ("#ownImg5Id");
+     var aOwnImages = [ownImg1Id, ownImg2Id, ownImg3Id, ownImg4Id, ownImg5Id];
+
+     //fImgLeftMargin (aOwnImages);
+
+     /!**-&#45;&#45;{ OwnPhones Buttons }-&#45;&#45;**!/
+     var leftArrowOwn = $ ("#leftArrowOwn");
+     var rightArrowOwn = $ ("#rightArrowOwn");
+     //var leftArrowStax2 = $ ("#leftArrowStax2");
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| Image Columns |=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     var ownColRight = $ (".ownColRight");
+     var ownColLeft = $ (".ownColLeft");
+     var ownColRightCrop = $ (".ownColRightCrop");
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ Create TwoColumnsClass instances }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     var ownTwoColumns = new TwoColumnsClass ();
+     //ownTwoColumns.fTwoColumns (80);
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ Create ImageResizerPerc instances }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     var ownImgResizer = new ImageResizerPerc ();
+     //ownImgResizer.fImgResPerc (544, 449, ownTwoColumns.RightColumn);
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ Create NewLeftRightColumnsClass instances }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     var ownLeftRightColumns = new NewLeftRightColumnsClass ();
+     //ownLeftRightColumns.fLeftRightCol(ownColLeft, ownColRight, ownColRightCrop, ownTwoColumns, ownImgResizer);
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ Create NextPreviousClass instances }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     var ownNextPrevArrow = new NextPreviousClass ();
+     ownNextPrevArrow.fNextPreviousButtons (rightArrowOwn, leftArrowOwn, aOwnImages, ownImagesChamberId);
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| OwnPhones Queries |=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ fOwnPhonesQueries function }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Collection of functions for this particular section
+     *  that runs inside "fMediaQueries()" that gets invoke
+     *  whenever the window resized.
+     *************************************************************!/
+     var fOwnPhonesQueries = function (columnWidthPerc) {
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ TwoColumnsClass instance }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** This will set the right column percentage and calculate
+     *  the value for the "this.RightColumn" and "this.LeftColumn"
+     *  properties that will be used by the "columns", "images or videos",
+     *  and the "image cropper".
+     *************************************************************!/
+     ownTwoColumns.fTwoColumns (columnWidthPerc);//setter
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ ImageResizerPerc instance }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Calculates the percentage based on the original image width
+     *  and the current bootstrap.container. This runs under the
+     *  window resize function so it's automatically calculated whenever
+     *  the window is resize.
+     *  It also sets the value for the "this.ImgNewHeight" property
+     ******************************************************************!/
+     ownImgResizer.fImgResPerc (544, 449, ownTwoColumns.RightColumn);
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ NewLeftRightColumnsClass instance }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** This will set the new left and right columns measurements
+     *  Arguments:
+     *  ownColLeft: Left column
+     *  ownColRight: Right column
+     *  ownTwoColumns: Section's TwoColumnsClass instance
+     *  ownImgResizer: Section's ImageResizerPerc instance
+     ******************************************************************!/
+     ownLeftRightColumns.fLeftRightCol (ownColLeft, ownColRight, ownColRightCrop, ownTwoColumns, ownImgResizer);
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ Images height and width }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** This will set the new image height and width measurements
+     *  aOwnImages: Array of images
+     *  ownImgResizer.ImgNewHeight: Image height
+     *  ownTwoColumns.RightColumn: Image width
+     ******************************************************************!/
+     fImageHeightWidth (aOwnImages, ownImgResizer.ImgNewHeight, ownTwoColumns.RightColumn);
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ Images chamber total width }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Total width of the chamber or container div holding the array of images
+     *  at the current percentage. Sums up the total images width plus an additional
+     *  pixels based on "chamberExtraLength".
+     ******************************************************************************!/
+     var ownTotalImgsWidth = ((ownTwoColumns.RightColumn * aOwnImages.length) + chamberExtraLength);
+     ownImagesChamberId.css ({"width": ownTotalImgsWidth});
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ NextPreviousClass instances }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Function for the navigation arrows
+     *  Slider width value is based on the current right column width.
+     *******************************************************************************!/
+     ownNextPrevArrow.NxtPos = ownTwoColumns.RightColumn;
+     ownNextPrevArrow.PrevPos = ownTwoColumns.RightColumn;
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ fPinChamber function }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Keeps the chamber in position during window resize
+     *******************************************************************************!/
+     fPinChamber (ownImagesChamberId, ownTwoColumns, ownNextPrevArrow);
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;==={ ownImgTitle css }===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Image title top position
+     *******************************************************************************!/
+     ownImgTitle.css ({"top": (ownImgResizer.ImgNewHeight)});
+     };
+
+     /!************************=| FUNCTIONS |=************************!/
+     /!**&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| fImgLeftMargin Function |=====&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  fImgLeftMargin: margin-left: -2.5px to fit the image better in the div.
+     *******************************************************************************!/
+     var fImgLeftMargin = function (aryImages) {
+     for (var i = 1; i < aryImages.length; i++) {
+     aryImages[i].css ({"marginLeft": "-2.5px"});
+     //aryImages[i].css ({"backgroundSize": "cover"});
+     //aryImages[i].css ({"backgroundSize": "100%"});
+     }
+     };
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| fPinChamber Function |=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Description:
+     *  Function to keep the Chamber in place whenever
+     *  the end user resize the window.
+     *  Scenario:
+     *  Navigate the section's images by clicking
+     *  the left or right arrow.
+     *  Resize the window, without this function if the image
+     *  selected is greater than index[0], the image will be
+     *  all over the place.
+     ****************************************************************!/
+     var fPinChamber = function (elem, sectTwoColumns, sectNxtPrevArrow) {
+     var chamberXPos = sectTwoColumns.RightColumn * sectNxtPrevArrow.countNum;
+     tMx.to (elem, .2, {left: -chamberXPos, ease: easePower});
+     };
+
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| fImageHeightWidth Function |=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Function for image height and width
+     *  imgsArray: images array
+     *  ht: image height
+     *  wt: image width
+     ****************************************************************!/
+     var fImageHeightWidth = function (imgsArray, ht, wt) {
+     /!**&#45;&#45;&#45;&#45;( Setting array member's heights and widths )&#45;&#45;&#45;&#45;**!/
+     for (var i = 0; i < imgsArray.length; i++) {
+     fAnimateHeightWidth (imgsArray[i], ht, wt); //rowImgRightColmnWidth);
+     ////console.log ("imgsArray[i]: ", imgsArray[i]);
+     }
+     };
+     /!**-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;=====| fAnimateHeightWidth Function |=====-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;**!/
+     /!** Animates element's height and width
+     ****************************************************************!/
+     var fAnimateHeightWidth = function (elem, eHeight, eWidth) {
+     //tMx.to (elem, animTym, {css: {height: eHeight, width: eWidth}, ease: easePower});
+     tMx.to (elem, animTym, {height: (eHeight + "px"), width: eWidth, ease: easePower});
+     };
+
+     */
+
+
+  </script >
+  -->
+</body >
+</html >
+
