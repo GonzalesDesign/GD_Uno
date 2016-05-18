@@ -7,149 +7,82 @@
 "use strict";
 
 /**-----------=====| TweenMax Reference Variables |=====-----------**/
-var tMx       = TweenMax;
-var easeSine  = Sine.easeOut;
-var easePower = Power3.easeOut;
-var animTym   = .5;
-/**-----------=====| fXSlider Function |=====-----------**/
-/** Animates element's left positions
- *  Use the attribute "left" instead of the matrix "x" (translateX())
- *  as a key and the horizPos as value.
- *  http://greensock.com/forums/topic/6963-tweenmax-tweening-css-x-vs-left/
- ****************************************************************/
-var fXSlider = function (elem, horizPos) {
-  //tMx.to (elem, animTym, {x: horizPos, ease: easePower});
-  //tMx.to (elem, animTym, {css: {x: horizPos}, ease: easePower});
-  //tMx.to (elem, animTym, {css: {left: horizPos}, ease: easePower});
+let tMx       = TweenMax;
+let easeSine  = Sine.easeOut;
+let easePower = Power3.easeOut;
+let animTym   = .5;
+
+/**-----------=====| fOpacityAnim Function |=====-----------**/
+/** Description:
+ ** Animates element's opacity from 0% to 100%
+ *************************************************************/
+let fOpacityAnim = function (elem) {
   elem.css ({"opacity": 0});
   tMx.to (elem, animTym, {opacity: 1, ease: easeSine});
-  tMx.to (elem, animTym, {left: horizPos, ease: easePower});
-  //elem.animate({left: horizPos}, animTym, "easeInQuad"); //JQuery animation. Doesn't work as is.
 };
 
-/**-----------=====| NextPreviousClass Class |=====-----------**/
+/**-----------=====| fXSlider Function |=====-----------**/
 /** Description:
- *  NextPreviousClass: Function to navigate the images inside the
- *  chamber. Similar to Carousel.
- *******************************************************************************/
+ ** Animates element's horizontal positions
+ ** Use the attribute "left" instead of the matrix "x" (translateX())
+ ** as a key and the horizPos param as value.
+ ** http://greensock.com/forums/topic/6963-tweenmax-tweening-css-x-vs-left/
+ ****************************************************************/
+let fXSlider = function (elem, horizPos) {
+  fOpacityAnim (elem);
+  tMx.to (elem, animTym, {left: horizPos, ease: easePower});
+};
 
+/**-------------------=====| NextPreviousClass Class |=====--------------------**/
+/** Description:
+ ** NextPreviousClass: Function to navigate the images inside the image container.
+ ** Similar to a Carousel.
+ ********************************************************************************/
 class NextPreviousClass {
-  constructor(rightArrow, leftArrow, imgWidth){
-    this.nxtPos;
-    this.RightArrow = rightArrow;
-    this.LeftArrow      = leftArrow;
-    this.SectionChamber; // = sectionChamber;
-    this.NxtPos = imgWidth;
-    this.PrevPos;
-
+  constructor () {
+    this.NxtPos;
   }
-  fTestMethod(){
-    let testString = "String from NextPreviousArrows.js";
-    console.log ("testString: ", testString);
-  }
+  fNextPreviousClass (rightArrow, leftArrow, imgContainer, imgContainerWidth, imgWidth) {
 
-  fNextPreviousButtons(rightArrow, leftArrow, imgContainer, imgContainerWidth, imgWidth){
-    let ix = 0;
-    console.log ("fNextPreviousButtons: ");
-    /**-------------===========( Right Arrow: Next Click Functions )===========-------------**/
-    rightArrow.click (function () {
-      ix++;
-      console.log ("fNextPreviousButtons 2: ix ", ix);
-      this.countNum = ix;
-      this.nxtPos   = imgWidth * ix;
-      //imgWidth * ix;
+    let num = 0; //closure
+
+    /**-----------=====| Next button function |=====-----------**/
+    rightArrow.click (() => {
+      num++;
+      this.NxtPos = imgWidth * num;
       leftArrow.show ();
-      //console.log ("aryImages.length: ", aryImages.length);
-      /*if (ix >= (aryImages.length - 1)) { //last image in an array
-        ix = aryImages.length - 1;
+      /**-----{ when it hits the end of the image container }-----**/
+      if (this.NxtPos >= (imgContainerWidth - imgWidth)) {
         rightArrow.hide ();
-      }*/
-      console.log("imgContainerWidth: ", imgContainerWidth);
-      if(imgContainerWidth){
-        //rightArrow.hide ();
       }
-
       /**-----{ fXSlider: Slides the image chamber to the right }-----**/
-      //fXSlider (this.SectionChamber, -(this.nxtPos)); // +8
-      fXSlider (imgContainer, -(imgWidth)); // +8
-      console.log ("-imgWidth: ", -imgWidth);
-      /**-----{ sectionChamber }-----**/
-      //fContainerMultiplier (this.SectionChamber, ix);
+      fXSlider (imgContainer, -(this.NxtPos));
+    });
+
+    /**-----------=====| Previous button function |=====-----------**/
+    leftArrow.click (() => {
+      num--;
+      this.NxtPos = imgWidth * num;
+      rightArrow.show ();
+      /**-----{ when it hits the beginning of the image container }-----**/
+      if (this.NxtPos <= 0) {
+        leftArrow.hide ();
+      }
+      /**-----{ fXSlider: Slides the image chamber to the right }-----**/
+      fXSlider (imgContainer, -(this.NxtPos));
     });
   }
 }
 
-var NextPreviousClassOld = function NextPreviousClass () {
-  let testString = "String from MextPreviousArrows.js";
-  console.log ("testString: ", testString);
-
-  /** Variables **/
-  this.nxtPos;
-  var prevPos;
-  var ix = 0;
-  //this.countNum = 0;
-  /** Method **/
-  this.fNextPreviousButtons = function fNextPreviousButtons (rightArrow, leftArrow, aryImages, sectionChamber) {
-    /** Variables **/
-    var self = this;
-    this.countNum;
-    /** Properties **/
-    this.RightArrow = rightArrow;
-    this.LeftArrow      = leftArrow;
-    this.SectionChamber = sectionChamber;
-    this.NxtPos;
-    this.PrevPos;
-    /** Method **/
-    /**-------------===========( Right Arrow: Next Click Functions )===========-------------**/
-    this.RightArrow.click (function () { //JQuery
-      ix++;
-      self.countNum = ix;
-      self.nxtPos   = self.NxtPos * ix;
-      leftArrow.show ();
-      console.log ("aryImages.length: ", aryImages.length);
-      if (ix >= (aryImages.length - 1)) { //last image in an array
-        ix = aryImages.length - 1;
-        rightArrow.hide ();
-      }
-      /**-----{ fXSlider: Slides the image chamber to the right }-----**/
-      fXSlider (self.SectionChamber, -(self.nxtPos)); // +8
-      console.log ("-self.nxtPos: ", -self.nxtPos);
-      /**-----{ sectionChamber }-----**/
-      //fContainerMultiplier (self.SectionChamber, ix);
-    });
-
-    /**-------------===========( Left Arrow: Previous Click Functions )===========-------------**/
-    //this.LeftArrow.bind ("click", function () {
-    this.LeftArrow.click (function () {
-      ix--;
-      self.countNum = ix;
-      prevPos       = self.PrevPos * ix;
-      console.log ("-prevPos: ", self.PrevPos, " ix: ", ix);
-      rightArrow.show ();
-      /*if (prevPos <= 0) {
-       prevPos = 0;
-       }*/
-      if (ix <= 0) {
-        ix = 0;
-        leftArrow.hide ();
-      }
-      /**-----{ fXSlider: Slides the images chamber to the left }-----**/
-      fXSlider (self.SectionChamber, -prevPos);
-      //console.log ("-prevPos: ", -prevPos, " ix: ", ix);
-
-      /**-----{ sectionChamber }-----**/
-      //fContainerMultiplier (sectionChamber, ix);
-    })
-  };
-};
-
 /****************************************************
- *  Webpack: module.exports
+ ** Webpack: module.exports
  ****************************************************/
+//module.exports.NextPreviousClass = NextPreviousClass;
 module.exports.NextPreviousClass = NextPreviousClass;
+//module.exports.PreviousImageClass = PreviousImageClass;
 
 //export default NextPreviousClass = NextPreviousClass;
 //module.exports.testString = testString;
 
-console.log(`Export from: NextPreviousArrows.js: 
+console.log (`Export from: NextPreviousArrows.js: 
 module.exports.NextPreviousClass = NextPreviousClass;`);
