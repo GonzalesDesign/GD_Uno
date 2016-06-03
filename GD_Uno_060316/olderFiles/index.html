@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+<head lang = "en" >
+  <meta charset = "UTF-8" >
+  <!--If IE use the lates rendering engine-->
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
+  <!--Set the page to the width of the device and set the zoom level -->
+  <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
+
+  <title >GDSite ES6</title >
+
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" >
+  <link href = "http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Open+Sans:400,300|Raleway|Cinzel" rel = "stylesheet" type = "text/css" >
+
+  <!--==========| INLINE STYLE |==========-->
+  <style >
+    h1 {
+      font-family: "Ubuntu", sans-serif;
+    }
+
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      font-size: .8em;
+      margin-top: 10px;
+    }
+
+    .container-fluid {
+      height: 100px;
+      margin: 20px 20px 10px 20px;
+      padding-bottom: 100px;
+      background-color: #cccccc;
+      border: solid 1px #444444;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style >
+
+</head >
+<!--==========| BODY START |==========-->
+<body >
+
+<div class = "container-fluid" >
+  <div class = "row" >
+    <div class = "col-sm-12" >
+      <h1 >ES6 AND WEBPACK</h1 >
+    </div >
+    <div class = "row" >
+      <div class = "col-sm-12 testElem" >
+        <h5 >Setting up ES6 with WebPack and Babel</h5 >
+
+        <p >
+          NodeJS already installed. <br /><br />
+          Start by creating the project directory and setup the index.html. <br /><br />
+          Terminal: <br />
+          npm init to create the package.json<br />
+          Open package.json and edit info <br />
+          Go back to Terminal <br />
+          npm install : Goes and grabs the diff packages <br />
+          Create webpack.config.js manually <br />
+          <br /><br />
+          To run Webpack Dev Server, copy and paste the following in the Terminal: <br />
+          node_modules/.bin/webpack-dev-server <br />
+          Test setup by running localhost:8080. Check Console for any errors. <br />
+
+        </p >
+
+        <p >
+          To stop server: Ctrl C or In the Terminal window, left top click on "X" to close session.
+        </p >
+        <hr />
+      </div >
+    </div >
+
+  </div >
+</div >
+
+<!--==========| JAVASCRIPTS |==========-->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script >
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script >
+<script src = "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script >
+<script src = "bundle.js" ></script >
+</body >
+<!--==========| BODY END |==========-->
+</html >

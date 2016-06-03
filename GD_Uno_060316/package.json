@@ -1,0 +1,26 @@
+{
+  "name": "gd-uno-x",
+  "version": "1.0.0",
+  "description": "codeArchitecture_X",
+  "main": "./jsX/codeArchitecture_X.js",
+  "dependencies": {
+    "babel-cli": "^6.7.5",
+    "gulp-update": "^0.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.*",
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server ./jsX/codeArchitecture_X.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "es6"
+  ],
+  "author": "odee",
+  "license": "ISC"
+}

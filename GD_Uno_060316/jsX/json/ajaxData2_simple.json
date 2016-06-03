@@ -1,0 +1,126 @@
+{
+	"GDSite": [
+		{
+			"title": "WebGraphicsDesigns",
+			"sectionTitle": "Web & Graphics Designs",
+			"headerRightColumnPercent": "80",
+			"projects": [
+			{
+				"title"          : "OwnPhones",
+				"subTitle": "Wireless Earbuds Uno",
+				"paragraphRightColumnPercent": "80",
+				"projDescription": "At vero eos et accusamus et iusto odio <strong><a href = #urlLinkPage2 > hrefLinkHere</a></strong> <br/> <strong>MULTILINE INSIDE JSON SUCKS!</strong> You can use the Soft wrap under General in the preferences for displaying multiline inside JSON. For multiline entry. Qui blanditiis praesentium voluptatum, deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
+				"imagesWidth"    : "1066",
+				"imagesHeight": "593",
+				"imgRightColumnPercent": "80",
+				"displayType": "image",
+				"images": [
+				{"imgName": "AboutOP.jpg", "imgTitle": "About OwnPhones 1", "imgDescription": "AboutOP-02 description."
+				}, {"imgName": "Poster_Designer.jpg", "imgTitle": "About OwnPhones 2", "imgDescription": "AboutOP-02 description."
+				}, {"imgName": "Poster_Jewelry.jpg", "imgTitle": "About OwnPhones 3", "imgDescription": "AboutOP-02 description."
+				}, {"imgName": "Poster_OwnStyle.jpg", "imgTitle": "About OwnPhones 4", "imgDescription": "AboutOP-02 description."
+				}, {"imgName": "Jewelry.jpg", "imgTitle": "About OwnPhones 5", "imgDescription": "Jewelry-02 description."
+				}
+			]
+			}, {
+				"title"          : "PersonalFresh",
+				"subTitle": "eStore",
+				"paragraphRightColumnPercent": "80",
+				"projDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+				"imagesWidth"    : "345",
+				"imagesHeight": "460",
+				"imgRightColumnPercent": "50",
+				"displayType": "image",
+				"images": [
+				{"imgName": "PF-00.jpg", "imgTitle": "About PersonalFresh", "imgDescription": "Yellow shirt girl."
+				}, {"imgName": "PF-01.jpg", "imgTitle": "About PersonalFresh", "imgDescription": "Miss Vv."
+				}, {"imgName": "PF-02.jpg", "imgTitle": "About PersonalFresh", "imgDescription": "My little china girl."
+				}
+			]
+			}, {
+				"title"          : "OwnPhones",
+				"subTitle": "Wireless Earbuds",
+				"paragraphRightColumnPercent": "80",
+				"projDescription": "At vero eos et accusamus et iusto odio <strong><a href = #urlLinkPage2 > hrefLinkHere</a></strong> <br/> <strong>MULTILINE INSIDE JSON SUCKS!</strong> You can use the Soft wrap under General in the preferences for displaying multiline inside JSON. For multiline entry. Qui blanditiis praesentium voluptatum, deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
+				"imagesWidth"    : "1066",
+				"imagesHeight": "593",
+				"imgRightColumnPercent": "80",
+				"displayType": "image",
+				"images": [
+					{"imgName": "Poster_Designer.jpg", "imgTitle": "Designer Series", "imgDescription": "OwnPhones Designer Series"
+					}, {"imgName": "Poster_OwnStyle.jpg", "imgTitle": "OwnStyle Series", "imgDescription": "OwnStyle"
+					}
+				]
+			}, {
+				"title"          : "OwnPhones",
+				"subTitle": "Video Animations",
+				"paragraphRightColumnPercent": "80",
+				"projDescription": "At vero eos et accusamus et iusto odio <strong><a href = #urlLinkPage2 > hrefLinkHere</a></strong> <br/> <strong>MULTILINE INSIDE JSON SUCKS!</strong> You can use the Soft wrap under General in the preferences for displaying multiline inside JSON. For multiline entry. Qui blanditiis praesentium voluptatum, deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+				"imagesWidth"    : "1280",
+				"imagesHeight": "920",
+				"imgRightColumnPercent": "100",
+				"displayType": "video",
+				"images": [
+					{"imgName": "AboutOP.jpg", "imgTitle": "About OwnPhones 1", "imgDescription": "AboutOP-02 description."
+					}, {"imgName": "AboutOP.jpg", "imgTitle": "About OwnPhones 1", "imgDescription": "AboutOP-02 description."
+					}
+				]
+			}, {
+				"title"          : "HBCBS",
+				"subTitle": "Horizon Blue Cross Blue Shield",
+				"paragraphRightColumnPercent": "50",
+				"projDescription": "subAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+				"imagesWidth"    : "544",
+				"imagesHeight": "438",
+				"imgRightColumnPercent": "80",
+				"displayType": "image",
+				"images": [
+					{"imgName": "HBCBS-00.jpg", "imgTitle": "HBCBS-00", "imgDescription": "Horizon Site."
+					}, {"imgName": "HBCBS-01.jpg", "imgTitle": "HBCBS-01", "imgDescription": "HBCBS-02 description."
+					}
+				]
+			}
+		]
+		}, {
+			"title": "PaintingDigitalIllustrations",
+			"sectionTitle": "Painting & Digital Illustrations",
+			"headerRightColumnPercent": "80",
+			"projects": [
+				{
+					"title"          : "Filipinas",
+					"subTitle": "Kawali Restaurant Painting",
+					"paragraphRightColumnPercent": "80",
+					"projDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+					"imagesWidth"    : "5306",
+					"imagesHeight": "3537",
+					"imgRightColumnPercent": "100",
+					"displayType": "image",
+					"images": [
+						{"imgName": "FilipinasMural-01.jpg", "imgTitle": "FilipinasMural-01", "imgDescription": "Me standing in front of my painting."
+						}, {"imgName": "FilipinasMural-03.jpg", "imgTitle": "FilipinasMural-03", "imgDescription": "FilipinasMural-03 description."
+						}, {"imgName": "FilipinasMural-04.jpg", "imgTitle": "FilipinasMural-04", "imgDescription": "FilipinasMural-04 description."
+						}, {"imgName": "FilipinasMural-05.jpg", "imgTitle": "FilipinasMural-05", "imgDescription": "FilipinasMural-05 description."
+						}, {"imgName": "FilipinasMural-06.jpg", "imgTitle": "FilipinasMural-06", "imgDescription": "FilipinasMural-06 description."
+						}, {"imgName": "FilipinasMural-07.jpg", "imgTitle": "FilipinasMural-07", "imgDescription": "FilipinasMural-07 description."
+						}
+					]
+				}, {
+					"title"          : "PersonalFresh",
+					"subTitle": "eStore",
+					"paragraphRightColumnPercent": "80",
+					"projDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. ",
+					"imagesWidth"    : "345",
+					"imagesHeight": "460",
+					"imgRightColumnPercent": "80",
+					"displayType": "image",
+					"images": [
+					{"imgName": "PF-00.jpg", "imgTitle": "About PersonalFresh", "imgDescription": "Yellow shirt girl."
+					}, {"imgName": "PF-01.jpg", "imgTitle": "About PersonalFresh", "imgDescription": "Miss Vv."
+					}, {"imgName": "PF-02.jpg", "imgTitle": "About PersonalFresh", "imgDescription": "My little china girl."
+					}
+				]
+				}
+			]
+		}
+	]
+}

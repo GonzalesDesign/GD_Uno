@@ -1,0 +1,28 @@
+{
+	"GDSite": [
+		{
+			"title": "WebGraphicsDesigns",
+			"sectionTitle": "Web & Graphics Designs",
+			"headerRightColumnPercent": "80",
+			"projects": [
+			{
+				"title"          : "OwnPhones",
+				"subTitle": "Wireless Earbuds Uno",
+				"paragraphRightColumnPercent": "80",
+				"projDescription": "At vero eos et accusamus et iusto odio <strong><a href = #urlLinkPage2 > hrefLinkHere</a></strong> <br/> <strong>MULTILINE INSIDE JSON SUCKS!</strong> You can use the Soft wrap under General in the preferences for displaying multiline inside JSON.",
+				"imagesWidth"    : "1066",
+				"imagesHeight": "593",
+				"imgRightColumnPercent": "80",
+				"displayType": "image",
+				"images": [
+					{"imgName": "AboutOP.jpg", "imgTitle": "About OwnPhones 0", "imgDescription": "AboutOP-00 description."},
+					{"imgName": "Poster_Designer.jpg", "imgTitle": "About OwnPhones 1", "imgDescription": "AboutOP-01 description."},
+					{"imgName": "Poster_Jewelry.jpg", "imgTitle": "About OwnPhones 2", "imgDescription": "AboutOP-02 description."},
+					{"imgName": "Poster_OwnStyle.jpg", "imgTitle": "About OwnPhones 3", "imgDescription": "AboutOP-03 description."},
+					{"imgName": "Jewelry.jpg", "imgTitle": "About OwnPhones 4", "imgDescription": "Jewelry-04 description."}
+				]
+			}
+			]
+		}
+	]
+}

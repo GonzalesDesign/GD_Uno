@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html >
+<head lang = "en" >
+  <meta charset = "UTF-8" >
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
+  <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
+
+  <title >Title Goes Here</title >
+
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" >
+  <link href = "http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Open+Sans:400,300|Raleway|Cinzel" rel = "stylesheet" type = "text/css" >
+
+  <!--==========| INLINE STYLE |==========-->
+  <style >
+    /*------=====| #container: Adds shadow around the page |=====-----*/
+    .container {
+      -webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
+      box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
+    }
+
+    h1 {
+      font-family: "Ubuntu", sans-serif;
+    }
+
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      font-size: medium;
+      margin-top: 10px;
+    }
+
+    .container-fluid {
+      height: auto;
+      margin: 20px 20px 10px 20px;
+      padding-bottom: 100px;
+      background-color: #cccccc;
+      border: solid 1px #444444;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style >
+
+</head >
+<!--==========| BODY START |==========-->
+<body >
+
+<div class = "container" ></div >
+
+
+<!--==========| JAVASCRIPTS |==========-->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script >
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script >
+<script src = "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script >
+<!--<script src = "JavascriptFileName.js"></script>-->
+
+<script type = "text/javascript" >
+  "use strict";
+
+  let fRowStyling = function (colmnId, width) {
+    colmnId.css ({
+      "width"           : width,
+      "height"          : "100px",
+      "border"          : "1px solid grey",
+      "margin-bottom"   : "20px",
+      "padding"   : "10px",
+      /*"background-color": "lightGrey",*/
+      "position"        : "relative", //relative absolute
+      "float"           : "left",
+      "overflow"        : "visible"//hidden; visible
+    });
+  };
+
+  let container = $ (".container");
+
+
+  let fCreateElement = function (divClassName, counter, appendedTo, width) {
+    let divElem       = document.createElement ("div");
+    divElem.className = divClassName;
+    //divElem2 = divClassName;
+    divElem.id        = divClassName + "Id" + counter;
+    $ (divElem).appendTo (appendedTo);
+    let divElemId     = $ ("#" + divClassName + "Id" + counter);
+    fRowStyling (divElemId, width);
+  };
+
+  for (let i = 0; i < 4; i++) {
+    fCreateElement("imgContainer", i, container, "200px");
+    let imgContainer = $ (".imgContainer");
+    let iLength = i;
+    console.log("iLength: ", iLength);
+    for (let ii = -1; ii < i; ii++) {
+      fCreateElement("imgContainer2", ii, imgContainer, "50px");
+
+    }
+  }
+
+
+</script >
+</body >
+<!--==========| BODY END |==========-->
+</html >

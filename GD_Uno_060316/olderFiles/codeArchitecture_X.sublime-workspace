@@ -1,0 +1,681 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"edi",
+				"editButton"
+			],
+			[
+				"ad",
+				"addTask"
+			],
+			[
+				"cla",
+				"classList"
+			],
+			[
+				"edit",
+				"editInput"
+			],
+			[
+				"contai",
+				"containsClass"
+			],
+			[
+				"lis",
+				"listItem"
+			],
+			[
+				"paren",
+				"parentNode"
+			],
+			[
+				"delet",
+				"deleteButton"
+			],
+			[
+				"par",
+				"parentNode"
+			],
+			[
+				"ta",
+				"taskCompleted"
+			],
+			[
+				"compl",
+				"completedTasksHolder"
+			],
+			[
+				"appe",
+				"appendChild"
+			],
+			[
+				"incomplet",
+				"incompleteTasksHolder"
+			],
+			[
+				"bind",
+				"bindTaskEvents"
+			],
+			[
+				"incomplte",
+				"incompleteTasksHolder"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"fo",
+				"font-family"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"cl",
+				"clickHandler"
+			],
+			[
+				"g",
+				"grandParent"
+			],
+			[
+				"pers",
+				"personFunct"
+			],
+			[
+				"name",
+				"name"
+			],
+			[
+				"get",
+				"getName"
+			],
+			[
+				"Obje",
+				"object"
+			],
+			[
+				"backgro",
+				"background-image"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"font",
+				"font-variant"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"color",
+				"background-color"
+			],
+			[
+				"FO",
+				"font-style"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"orange",
+				"orangeRed"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"w",
+				"w"
+			],
+			[
+				"al",
+				"padding-left"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"o",
+				"overflow"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"f",
+				"footer	Tag"
+			],
+			[
+				"Lig",
+				"LightGray"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"scro",
+				"scrollTop"
+			],
+			[
+				"to",
+				"toElement"
+			],
+			[
+				"top",
+				"top"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"A",
+				"Avenir"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"hea",
+				"header	Tag"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
+				"st",
+				"steps"
+			],
+			[
+				"el",
+				"el"
+			],
+			[
+				"s",
+				"style"
+			],
+			[
+				"ar",
+				"article	Tag"
+			],
+			[
+				"h",
+				"href	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 355.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"su",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"sub",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: <?php foreach (…) … <?php endforeach ?>"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 111.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Odee/Downloads/TemporaryDownloads/responsive-image-carousel-with-angular-js-and-bootstrap-3 2/index.html",
+		"/Users/Odee/Documents/WIPS/WIP_2015/Javascript_html5_css3/Bootstrap/gonzalesDesign/css/gonzalesDesign01.css",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Randomizer/Randomizer_edgeActions.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Flash/StaxGallery/3StaxTemplate/Gallery9.as",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/playPen7/playPen7b_edgeActions.js",
+		"/Library/WebServer/Documents/GitHub/OnlineCourses/InteractiveJavascriptWebPages.js",
+		"/Library/WebServer/Documents/GitHub/WeatherApp/pages/home.html",
+		"/Library/WebServer/Documents/GitHub/WeatherApp/pages/forecast.html",
+		"/Library/WebServer/Documents/GitHub/WeatherApp/app.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Javascript/SongTrackList.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Javascript/js/songTrack.js",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/BrowserBookmarks.sublime-settings",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Javascript/learningJavascript.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Javascript/LearningJavascript.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Javascript/Learning Javascript.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/gonzalesDesign/js/skrollr.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/gonzalesDesign/js/smoothie.min.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/infiniteSite01_Intro.sublime-workspace",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/infiniteSite01_imgResponsive.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/infiniteSite01_images.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/justCarousel_BoracayBG.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/css/justCarouselCustom.css",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/playPen7/pp7ActionTest.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/images/MercedesKlasy/13c1150_058.jpg",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/css/boot3BasicStyle.css",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/js/navButtonHiliter.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/boot3Basc_NavJmboTstmnlFeatrsFormGalleryFooter.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/Tutsplus - Bootstrap 3 for Web Design/2.A First Look at Bootstrap/Bootstrap 3 for Web Design - 2.1. Bootstrap Overview and Installation.mp4",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Flash/StaxGallery/NYC_Motorshow2009/xml/Gallery.xml",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/InfiniteSkills.com - Learning Bootstrap 3 ® tuantiep/01. Introduction/0104 How To Access Your Working Files.MP4",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Playpen/Audio/Sweet_as_Honey.mp3",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/playPen7/htmlVersion/style.css",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/js/StringUtils.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Flash/StaxGallery/3StaxTemplate/LoadMP3SubClass.as",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/InfiniteSkills.com - Learning Bootstrap 3 ® tuantiep/07. The Blog Page/0705 Using List Groups.MP4",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BonsaiStand/publish/animate_package/BonsaiStand.oam",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/BeforeAfterX1.an",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/BeforeAfterA1_edgePreload.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/BeforeAfterA1_edgeActions.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/BeforeAfterA1_edge.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/BeforeAfterA1.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/BeforeAfterA1.an",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/BeforeAfter.oam",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/_notes/dwsync.xml",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter_edgePreload.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter_edgeActions.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter_edge.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter2_edgePreload.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter2_edgeActions.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter2_edge.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter2.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter2.an",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/BeforeAfter.an",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/smoothPageScroll.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/jscrollpane.css",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/bulletProofScrollbar.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/playPen7/htmlVersion/htmlVersion.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/playPen7/htmlVersion/htmlBasicTemplate.html",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/BrowserBookmarks/BrowserBookmarks.sublime-settings",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/SublimeBookmarks/Default.sublime-keymap",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-keymap",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/css/normalize.css",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/css/carousel.css",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/Base File.sublime-settings",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/bootstrap3_shell_navbar.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/carouselJumbotron.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/bootstrap3_shell_carousel2.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/bootstrap3_shell_carousel.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/MediaQueries_JS2_Palawan.html",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap-User.json",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/bootdtrap3_shell_carousel2.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/Bootstrap/css/custom.css",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/MediaQueries_JS2.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/playPen7/playPen7_edgeActions.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/emmetShortcuts.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/basic.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/retouchingPhotos.json",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/greensock-v12-js/cataners-bb54c1b58f93/js/GSAP/plugins/RoundPropsPlugin.min.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BeforeAfter/Backups/Website-1.muse",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BirdhouseAnimate/WorkingFiles/birdhouseScroll.an",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BirdhouseAnimate/WorkingFiles/birdhouseScroll_edge.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BirdhouseAnimate/WorkingFiles/birdhouseScroll_edgePreload.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/BirdhouseAnimate/WorkingFiles/birdhouseHorScroll.oam",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Flash/xtra/MP3/Per Amore.mp3",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/multiDivs.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/playPen7/playPen7.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/EdgeAnimate_CodeLibrary.js",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/ballBounce.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/test.html",
+		"/Users/Odee/Documents/WebServer/RLloydGonzalesPortfolio/Scroll/images/ANIMATIONS/Javascript_html5_css3/rasterizer.html",
+		"/Users/Odee/Library/Application Support/Sublime Text 3/Packages/User/HTML.sublime-settings",
+		"/Applications/ZBrushOSX 4R6/Documentation/SplitMasked.TXT",
+		"/Users/Odee/Creative Cloud Files/OwnPhones/OwnPhones Edge X/images/OwnPhones Final/OwnErgonomics/OwnErgo_TiledImgSlider2_edgeActions.js",
+		"/Users/Odee/Downloads/TemporaryDownloads/Divi/index.php"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 123.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"console",
+			"fScrnResize",
+			"resizeFunction",
+			"1",
+			"button-stop",
+			"button-play",
+			"eTrax",
+			"elTracks",
+			"mother",
+			"mousewheel",
+			"aYPos",
+			"i>",
+			"<i",
+			"i",
+			"openSansUpper",
+			"openSansParag",
+			"helvStyle",
+			"paraMid",
+			"largeH1",
+			"rowTopPad",
+			"center",
+			"../images/elNido",
+			"../../images/elNido",
+			".nav",
+			"border",
+			"border: 1px",
+			"cmd",
+			"Selecting",
+			"T",
+			"To",
+			"\n",
+			"Selecting",
+			"border: 0px",
+			"currentImage",
+			"fHiliteMenuBtn",
+			"main-navbar",
+			"changeBG",
+			"lg",
+			"email",
+			"name",
+			"Magenta",
+			"getElementById",
+			"@media",
+			"default",
+			"glyphicon",
+			"normalize",
+			"glyphicon",
+			"titlePalawan3",
+			"titleContainer",
+			"titlePalawan2",
+			"/*!",
+			"jumbotron",
+			"titlePalawan",
+			"bottomMenu",
+			"respon",
+			"carousel-inner",
+			"carousel-control",
+			"carousel-control\n",
+			"sr-only",
+			"dir",
+			"featurette-heading",
+			"subTitle",
+			"Avenir",
+			"2em",
+			"jumbotron",
+			"row",
+			"container",
+			"thePort",
+			"portfolio",
+			"featurette-divider",
+			"featurette",
+			"bottomContainer",
+			"h2",
+			"elNido",
+			"elNido1",
+			"elNido",
+			"html5",
+			"5",
+			"parallax",
+			"background",
+			"iconsSym"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"motherFunct",
+			"currentID",
+			"div",
+			"dir",
+			"elNido/elNido",
+			"elNido",
+			"fParallax",
+			"tiledImageSym",
+			"iconsSym"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 45.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 178.0
+	},
+	"pinned_build_system": "",
+	"project": "codeArchitecture_X.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 363.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

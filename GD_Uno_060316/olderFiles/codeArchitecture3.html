@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html >
+<head lang = "en" >
+  <meta charset = "UTF-8" >
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
+  <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
+
+  <title >GD Uno: Code Architecture</title >
+
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" >
+  <link href = "http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Open+Sans:400,300|Raleway|Cinzel" rel = "stylesheet" type = "text/css" >
+
+  <!--==========| INLINE STYLE |==========-->
+  <style >
+    h1 {
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 300;
+      font-size: 2em;
+    }
+
+    p {
+      /*font-family: "Open Sans", sans-serif;*/
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      font-size: 1em;
+      margin-top: 10px;
+      color: teal;
+    }
+
+    .container-fluid {
+      height: auto;
+      margin: 20px 20px 10px 20px;
+      padding-bottom: 100px;
+      /*background-color: #cccccc;
+			border: solid 1px #444444;
+			border-radius: 10px;*/
+    }
+
+    /*------=====| #container: Adds shadow around the page |=====-----*/
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+      -webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
+      box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
+    }
+
+    .colHeader {
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 400;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      color: darkslategray;
+    }
+
+    .colxs8 {
+      width: 66.66666667%;
+      float: left;
+      position: relative;
+      min-height: 1px;
+      padding-right: 0px;
+      padding-left: 0px;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    .projectContainer {
+      /*width: 400px;*/
+      float: left;
+      position: relative;
+      /*height: 320px;*/
+      /*background-color: grey;*/
+    }
+
+    .row {
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      border: 0px solid darkred;
+    }
+
+    .rowImages {
+      padding-left: 0px;
+      padding-right: 0px;
+      border: 0px solid purple;
+    }
+
+    .colLeft {
+      padding-left: 0px;
+      /*width: 200px;*/
+      height: 10px;
+      border: 1px solid orange;
+    }
+
+    .colRight {
+      padding-left: 0px;
+      padding-right: 0px;
+      /*background-color: beige;*/
+      /*overflow: hidden;*/
+      /*visible hidden*/
+      height: auto;
+      border: 0px solid #e45a2e;
+    }
+
+    .imgCropper {
+      /*background-color: beige;*/
+      /* width: 800px;*/
+      /*auto;*/
+      /*width: 66.66666667%;*/
+      overflow: visible; /*visible hidden*/
+      border: 0px solid #a2e42a;
+    }
+
+    .imageContainer {
+      /*width: 400px;
+      height: 150px;*/
+      border: 0px solid black;
+    }
+
+    #imageDivId {
+      /* width: 100%;*/
+      height: 350px;
+      background: url(./images/PersonalFresh/PF-00.jpg) no-repeat;
+      background-size: cover;
+      background-color: yellowgreen;
+      display: inline-block;
+      border: 1px solid #e45a2e;
+    }
+
+    .imageName {
+      font-family: "Merriweather", serif;
+      /*font-weight: 300;*/
+      font-size: 1em;
+      margin-left: 10px;
+      margin-top: 10px;
+      color: red;
+    }
+
+    .imageNameDivClass {
+      font-family: "Ubuntu", sans-serif;
+      /*font-family: "Merriweather", serif;*/
+      /*font-weight: 300;*/
+      font-size: 1.2em;
+      margin-left: 10px;
+      margin-top: 10px;
+      color: grey;
+    }
+
+    .rowParag {
+      border: 1px solid darkcyan;
+    }
+
+    .rightColumnParag {
+      border: 1px solid tomato;
+    }
+
+    .title {
+      font-family: "Open Sans", sans-serif;
+      /*font-weight: 300;*/
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: teal;
+      border: 0px solid tomato;
+    }
+
+    .subTitle {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      font-size: 1em;
+      margin-top: 10px;
+      color: teal;
+      border: 0px solid tomato;
+    }
+
+    .paragDescription {
+      border: 0px solid tomato;
+    }
+
+    .square1 {
+      /*width: 300px;*/
+      height: 300px;
+      background-color: yellowgreen;
+    }
+
+    .childSquare1 {
+      width: 70%;
+      height: 280px;
+      background-color: orange;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .sectionSpacer {
+      height: 80px;
+      border: 0px solid #ff5011;
+    }
+
+
+  </style >
+
+</head >
+<!--==========| BODY START |==========-->
+<body >
+
+<div class = "container-fluid" >
+  <div class = "row" >
+    <div class = "col-sm-12" >
+      <h1 >GD UNO CODE ARCHITECTURE</h1 >
+
+      <!--<p id = "mainContainer" >
+        Pseudo code for the site's 2 columns architecture. <br />
+        HTML Elements Breakdown: <br />
+        body: <br />
+        container: <br />
+
+      <p >
+        /••-&#45;&#45;&#45;&#45;===| Sections: Designs, Illustrations |===-&#45;&#45;&#45;&#45;••/ <br /><br />
+      </p >
+
+      <p >
+        /••-&#45;&#45;&#45;&#45;===| Project Template |===-&#45;&#45;&#45;&#45;••/ <br /><br />
+        row, class="rowImages" <br />
+        &#45;&#45; leftColumn <br />
+        &#45;&#45; rightColumn, class="cropper" <br />
+        &#45;&#45;&#45;&#45; imageContainer //width: multiply img width by node length <br />
+        &#45;&#45;&#45;&#45; imgDiv, images //get json image nodes <br />
+        &#45;&#45;&#45;&#45;&#45;&#45; h5, image title
+      </p >
+
+      <p >
+        row, class="rowParag" <br />
+        &#45;&#45; leftColumn <br />
+        &#45;&#45; rightColumn, class="rightColumnParag" <br />
+        &#45;&#45;&#45;&#45; h3, title <br />
+        &#45;&#45;&#45;&#45; h4, sub-title <br />
+        &#45;&#45;&#45;&#45; paragDescription <br /><br />
+        /••-&#45;&#45;&#45;&#45;===| End Project Template |===-&#45;&#45;&#45;&#45;••/ <br />
+      </p >
+      </p >
+
+      <p id = "modules" >
+        List of modules: <br />
+        JSON <br />
+        html template in js <br />
+        twoColumns logic <br />
+      </p >
+
+      <p id = "instruction" >
+        Create separate modules for the templates, ajax, logic. <br />
+        Each of the modules should be editable without breaking the dependencies between modules. <br />
+      </p >-->
+
+    </div >
+  </div >
+</div >
+
+<div class = "container" id = "container1Id" ></div >
+<br />
+<br />
+<br />
+
+<!--<div class = "container" id = "container2Id" ></div >-->
+
+<!-- Section Header'sTemplate -->
+<div class = "sectionHeaderContainer" id = "headerId_" >
+  <div class = "row rowHeader" >
+    <div class = "col-xs-4 colLeft" ></div >
+    <div class = "col-xs-8 colRight colHeader" id = "colHeaderId_" >
+      <div >HEADER</div >
+    </div >
+  </div >
+</div >
+<!-- .projectContainer Template -->
+<div class = "projectContainer" id = "projectContainerId_" >
+  <div class = "row rowImages" >
+    <div class = "col-xs-4 colLeft imgColLeft" id = "colLeftId" ></div >
+    <div class = "col-xs-8 colRight imgCropper" id = "colRightId" >
+      <!-- .imageContainer Template -->
+      <div class = "imageContainer" id = "imgContainerId_" >
+        <!--<div class = "imageDiv" id = "imageDivId_" >
+          <div class = "imageName" id = "imageNameId_" >Image Title</div >
+        </div >-->
+      </div >
+    </div >
+  </div >
+  <div class = "row rowParag" >
+    <div class = "col-xs-4 colLeft" ></div >
+    <div class = "col-xs-8 colRight rightColumnParag" >
+      <h3 class = "title" ></h3 >
+      <h4 class = "subTitle" ></h4 >
+
+      <p class = "paragDescription" ></p >
+    </div >
+  </div >
+  <div class = "sectionSpacer" ></div >
+</div >
+
+
+<!-- End Section'sTemplate -->
+<br />
+
+<!--==========| JAVASCRIPTS |==========-->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script >
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script >
+<script src = "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script >
+<!--<script src = "codeArchitecture.js"></script>-->
+
+<script type = "text/javascript" >
+
+  "use strict";
+
+  /********************************************~********************************************/
+  /** Templating using html div structure **/
+  //let container = document.getElementsByClassName ("container");
+  /** DOM caching **/
+  let container = $ (".container");
+  let containerWidth = (container.width ());
+  console.log ("containerWidth: ", containerWidth);
+  let container1Id = $ ("#container1Id");
+  let container2Id = $ ("#container2Id");
+
+  let sectionHeaderContainer = document.getElementsByClassName ("sectionHeaderContainer")[0];
+
+  let rowHeader = document.getElementsByClassName ("rowHeader")[0];
+  let colHeader = document.getElementsByClassName ("colHeader")[0];
+  let h2 = $ ("h2");
+
+  let projectContainer = document.getElementsByClassName ("projectContainer")[0];
+  let imageContainer = document.getElementsByClassName ("imageContainer")[0];
+  let imageContainerClass = document.getElementsByClassName ("imageContainer")[0];
+
+  let imageDiv = document.getElementsByClassName ("imageDiv")[0];
+  /*let fCreateImgDivElement = function(){
+   let imgDivElemnt       = document.createElement ("div");
+   }*/
+  let imageName = document.getElementsByClassName ("imageName")[0];
+
+  let title = document.getElementsByClassName ("title")[0];
+  let subTitle = document.getElementsByClassName ("subTitle")[0];
+  let paragDescription = document.getElementsByClassName ("paragDescription")[0];
+
+  let imageContainerId;
+
+  let colLeft = document.getElementsByClassName ("colLeft")[0];
+  let imgColLeft = document.getElementsByClassName ("imgColLeft")[0];
+  //let imgColLeft = $(".imgColLeft");
+  let colRight = document.getElementsByClassName ("colRight")[0];
+  let imgCropper = document.getElementsByClassName ("imgCropper")[0];
+
+  //let imageNameId = $ ("#imageNameId");
+
+  /*let someString = "Some string here."
+   let imageNameId = document.getElementById ("imageNameId");
+   imageNameId.innerHTML = someString;*/
+  //$(imageNameId).text = someString;
+  /*console.log ("imageName: ", imageName);
+   //imageName.innerHTML = "TEST"
+
+   let h5 = $ ("h5"); //Image title
+   h5.innerHTML = "TEST"
+   let ownImgTitle = $ (".imageContainer .imageDiv h5");
+   ownImgTitle.innerHTML = "TEST"
+
+   h5.textContent = "H5 Text Content"
+
+   $(imageName).text()*/
+
+  /*var fImgDivStylingX = function (imgDivId, imgSrc) {
+   imgDivId.css ({
+   "padding-left"    : "-15px",
+   "padding-right"   : "-15px",
+   "background"      : "url(" + imgSrc + ") no-repeat",
+   "background-size" : "cover", //cover 100%
+   "width"           : "400px",
+   "height"          : "550px", //ImageHeight(origWt, origHt),
+   "border"          : "2px solid blue",
+   "background-color": "orange",
+   "position"        : "absolute", //relative absolute
+   "float"           : "left",
+   "overflow"        : "hidden"//hidden; visible
+   });
+   };*/
+  var fImgContainerDivStyling = function (imageContanrId, containerWidth, containerHeight) {
+    imageContanrId.css ({
+      /*"padding-left"    : "-15px",
+       "padding-right"   : "-15px",*/
+      //"background"      : "url(" + imgSrc + ") no-repeat",
+      //"background-size" : "cover", //cover 100%
+      "width"           : containerWidth, //"1300px", //containerWidth,
+      "height"          : containerHeight, //ImageHeight(origWt, origHt), "100%", //
+      "border"          : "0px solid red",
+      "background-color": "teal",
+      "position"        : "relative", //relative absolute
+      "float"           : "left"
+      /*"overflow"        : "hidden"//hidden; visible*/
+    });
+  };
+  /** counter init **/
+  //let counter = 0;
+  /**----------------=====| TwoColumnsClass Class |=====----------------**/
+  /** Description:
+   *  Class to calculate the two columns within the bootstrap container.
+   *  The provided percentage argument is use for the right column converted to pixel.
+   *  The left column will have the container width minus the right column width.
+   *******************************************************************************/
+  class TwoColumnsClass {
+    constructor (rightColumn, leftColumn) {
+      this.RightColumn = rightColumn;// = RightColumn; //right column property that's accessible outside through the Class
+      this.LeftColumn  = leftColumn;// = LeftColumn; //left column property
+      /**----- To access these properties outside, use classInstance.property -----**/
+    }
+
+    fTwoColumns (rightColumnPercentage) {
+      this.RightColumn = Math.round (containerWidth * (rightColumnPercentage / 100));
+      this.LeftColumn  = Math.round (containerWidth - this.RightColumn);
+      console.log (`Right Column: ${this.RightColumn} | Left Column: ${this.LeftColumn}`);
+    }
+  }
+
+  let twoColumnsTestInstance = new TwoColumnsClass ();
+  twoColumnsTestInstance.fTwoColumns (80);
+
+  //let ownTwoColumnsInstance = new TwoColumnsClass ();
+
+  /**----------------=====| fRoundToTwo Function |=====----------------**/
+  /** Description:
+   *  fRoundToTwo: rounds the decimals to two.
+   *******************************************************************************/
+  var fRoundToTwo = function (num) {
+    return +(Math.round (num + "e+2") + "e-2");
+  };
+
+  class ImageResizerPerc {
+    constructor () {
+      //super(ImgNewHeight); use super when extending
+      this.ImgNewHeight; //to be accessible outside
+      //console.log ("GDCol: this.ImgNewHeight: ", this.ImgNewHeight);
+      this.imgResizePercent;
+    }
+
+    // this.fImgResPerc = (origImgWidth, origImgHeight, imgRightColumn) => {
+    fImgResPerc (origImgWidth, origImgHeight, imgRightColumn) {
+      let imgOrigWidth      = origImgWidth;
+      let imgOrigHeight     = origImgHeight;
+      let imgResizePercent  = imgRightColumn / imgOrigWidth;
+      imgResizePercent      = fRoundToTwo (imgResizePercent);
+      this.imgResizePercent = imgResizePercent;
+      this.ImgNewHeight     = Math.round (imgOrigHeight * imgResizePercent);
+      /*console.log ("imgOrigWidth: ", imgOrigWidth);
+       console.log ("imgRightColumn: ", imgRightColumn);
+       console.log ("imgResizePercent: ", imgResizePercent);
+       console.log ("imgOrigHeight: ", imgOrigHeight);
+       console.log ("this.ImgNewHeight: ", this.ImgNewHeight);*/
+    }
+  }
+
+  let ownImageResizePerc = new ImageResizerPerc ();
+
+  class BuildSectionContainer {
+    constructor (containerHeight, imgCount) {
+      console.log ("class BuildSectionContainer:===-------------------------•");
+      this.countNum;
+      this.containerWidth;
+      this.containerHeight = containerHeight;
+      //this.projectTestTag;
+      this.imgCount        = imgCount;
+    }
+
+    /*****************************************************************
+     * fBuildSectionHeaderContainer: For building the header area
+     *  It's built once per section.
+     *****************************************************************/
+    fBuildSectionHeaderContainer (headerString, headerCounter) {
+      console.log ("fBuildSectionHeaderContainer:===-------------------------•");
+
+      colHeader.innerHTML = headerString;
+      colHeader.id        = "colHeaderId_" + headerCounter;
+
+      /* cloning the template parent div */
+      let cln = sectionHeaderContainer.cloneNode (true);
+
+      /* unique id */
+      cln.id = "headerId_" + headerCounter;
+
+      /* appending */
+      $ (cln).appendTo (container);
+
+      /* remove template from the html */
+      sectionHeaderContainer.remove ();
+
+    }
+
+    /*****************************************************************
+     * fBuildProjectContainer: For building the Project area
+     *  It's generated based on how many projects is in a section
+     *****************************************************************/
+    fBuildProjectContainer (countNum, projName, titleString, subTitleString,
+                            descriptionString, containerWidth, containerHeight) { //, projectTestTag) {
+      console.log ("fBuildProjectContainer:===------------------------------------•", countNum);
+      //this.projectTestTag = projectTestTag;
+      //console.log ("projectTestTag: ", projectTestTag);
+      this.countNum = countNum;
+      console.log ("Project #: ", this.countNum);
+      this.containerWidth  = containerWidth;
+      this.containerHeight = containerHeight;
+      imageContainer.id    = "imgContainrId_" + this.countNum;
+      imageContainerId     = $ ("#imgContainrId_" + this.countNum);
+
+      imgColLeft.id = "colLeftId" + this.countNum;
+      let colLeftId = $ ("#colLeftId" + this.countNum);
+      colLeftId.css ({"width": twoColumnsTestInstance.LeftColumn});
+      //colLeft.style.width = twoColumnsTestInstance.LeftColumn;
+
+      imgCropper.id    = "imgCropperId" + this.countNum;
+      let imgCropperId = $ ("#imgCropperId" + this.countNum);
+      imgCropperId.css ({"width": twoColumnsTestInstance.RightColumn});
+
+      fImgContainerDivStyling (imageContainerId, containerWidth, containerHeight);
+
+      /**----- Project's Title, SubTitle & Description : innerHTML -----**/
+      title.innerHTML = titleString;
+      subTitle.innerHTML         = subTitleString;
+      paragDescription.innerHTML = descriptionString;
+
+      /**----- cloning the template parent div -----**/
+      let projContnrClone = projectContainer.cloneNode (true);
+
+      /**----- unique id -----**/
+      projContnrClone.id = projName + "_ProjectContainerId_" + this.countNum;// + counter2;
+
+      let projContnrCloneId = $ ("#" + projName + "_ProjectContainerId_" + this.countNum);// + counter2);
+
+      /* appending */
+      $ (projContnrClone).appendTo (container); //appending to the DOM
+
+      /* remove template from the html */
+      projectContainer.remove ();
+
+    }
+
+    /*****************************************************************
+     * fBuildImageDivs: For building image divs in projects
+     *  It's generated based on how proj.images.length
+     *****************************************************************/
+    fBuildImageDivs (projTitle, counter, myImageSrc, imageNameString,
+     imgRightColumn, imgNewHt) {
+     //console.log ("fBuildImageDivs:===-------------------------•", counter);
+
+     this.imgCount = counter;
+     console.log (`Image#: ${counter}`);
+     let idExtension = projTitle + counter;
+
+     //ownImageResizePerc.fImgResPerc (origImgWidth, origImgHeight, imgRightColumn);
+
+     //this.containerHeight = imgNewHt;
+
+     //this.ImgNewHeight = imgNewHt;
+
+     let imgContainrId = $ ("#imgContainrId_" + this.countNum);
+     imgContainrId.css ({"width": this.containerWidth});
+     //imgContainrId.css ({"height": this.ImgNewHeight});
+
+     /** createElement div**/
+     let imgDivElemnt = document.createElement ("div");
+     imgDivElemnt.id  = "imageDivId_" + idExtension; //set id
+
+     $ (imgDivElemnt).appendTo (imgContainrId);
+
+     let imgDivElemntId = $ ("#imageDivId_" + idExtension); //get id
+
+     imgDivElemntId.css ({
+     /*"padding-left"    : "-15px",
+     "padding-right"   : "-15px",*/
+     "margin"          : "0px",
+     "background"      : "url(" + myImageSrc + ") no-repeat",
+     "background-size" : "cover", //cover 100%
+     "width"           : imgRightColumn, //"300px",
+     "height"          : imgNewHt, //"300px", //ImageHeight(origWt, origHt),
+     "border"          : "1px solid orange",
+     "background-color": "orange",
+     "position"        : "relative", //relative absolute
+     "float"           : "left"
+     //"overflow"        : "visible"//hidden; visible
+     });
+
+     let imageNameDiv       = document.createElement ("div");
+     imageNameDiv.className = "imageNameDivClass";
+     imageNameDiv.id        = "imageNameDivId_" + idExtension; //counter + counter2;// + counter3;
+     $ (imageNameDiv).appendTo (imgDivElemntId); //imageContainer
+     imageNameDiv.innerHTML = imageNameString;
+
+     }
+  }
+
+  //class ChildClass extends ParentClass
+  /*class fBuildImageDivsXXX extends BuildSectionContainer (){
+    constructor (projTitle, counter, myImageSrc, imageNameString, imgRightColumn, imgNewHt){
+      //super()
+      //console.log ("fBuildImageDivs:===-------------------------•", counter);
+      this.imgCount = counter;
+      console.log (`Image#: ${counter}`);
+      let idExtension = projTitle + counter;
+      //ownImageResizePerc.fImgResPerc (origImgWidth, origImgHeight, imgRightColumn);
+      //this.containerHeight = imgNewHt;
+      //this.ImgNewHeight = imgNewHt;
+      let imgContainrId = $ ("#imgContainrId_" + this.countNum);
+      imgContainrId.css ({"width": this.containerWidth});
+      //imgContainrId.css ({"height": this.ImgNewHeight});
+      /!** createElement div**!/
+      let imgDivElemnt = document.createElement ("div");
+      imgDivElemnt.id  = "imageDivId_" + idExtension; //set id
+      $ (imgDivElemnt).appendTo (imgContainrId);
+      let imgDivElemntId = $ ("#imageDivId_" + idExtension); //get id
+      imgDivElemntId.css ({
+        /!*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*!/
+        "margin"          : "0px",
+        "background"      : "url(" + myImageSrc + ") no-repeat",
+        "background-size" : "cover", //cover 100%
+        "width"           : imgRightColumn, //"300px",
+        "height"          : imgNewHt, //"300px", //ImageHeight(origWt, origHt),
+        "border"          : "1px solid orange",
+        "background-color": "orange",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+        //"overflow"        : "visible"//hidden; visible
+      });
+      let imageNameDiv       = document.createElement ("div");
+      imageNameDiv.className = "imageNameDivClass";
+      imageNameDiv.id        = "imageNameDivId_" + idExtension; //counter + counter2;// + counter3;
+      $ (imageNameDiv).appendTo (imgDivElemntId); //imageContainer
+      imageNameDiv.innerHTML = imageNameString;
+    }
+  }*/
+  //let imgBuilds = new fBuildImageDivs ();
+
+
+  class BuildSectionContainer_Old {
+    constructor () {
+      console.log ("class BuildSectionContainer:===-------------------------•");
+      this.countNum;
+      this.containerWidth;
+      this.containerHeight;
+    }
+
+    /** fBuildSectionHeaderContainer: For building the header area
+     *  It's built once per section.
+     ********************************************************/
+    fBuildSectionHeaderContainer (headerString, counter) {
+      console.log ("fBuildSectionHeaderContainer:===-------------------------•");
+
+      colHeader.innerHTML = headerString;
+      colHeader.id        = "colHeaderId_" + counter;
+      /* cloning the template parent div */
+      let cln = sectionHeaderContainer.cloneNode (true);
+      //let cln2 = colHeader.cloneNode (true);
+      //cln2.innerHTML = headerString;
+      /* unique id */
+      cln.id = "headerId_" + counter;
+      //cln2.id = "colHeaderId_" + counter;
+      /* appending */
+      //document.body.appendChild (cln);
+      $ (cln).appendTo (container);
+      //$ (cln2).appendTo (rowHeader);
+      /* remove template from the html */
+      sectionHeaderContainer.remove ();
+      //colHeader.remove ();
+    }
+
+    /** fBuildProjectContainer: For building the Project area
+     *  It's generated based on how many projects is in a section
+     ********************************************************/
+    fBuildProjectContainer (countNum, projName, titleString, subTitleString,
+                            descriptionString, containerWidth, containerHeight) {
+      console.log ("fBuildProjectContainer:===------------------------------------•", countNum);
+      this.countNum = countNum;
+      console.log ("this.countNum: ", this.countNum);
+      this.containerWidth = containerWidth;
+      console.log ("this.containerWidth 1: ", this.containerWidth);
+      /*console.log("imageContainerClass xa: ", imageContainerClass);
+       imageContainer.className = "imgContainrClass" + counter;
+       let imgContainrClass = $(".imgContainrClass"+ counter);
+       console.log("imgContainrClass: ", imgContainrClass);*/
+      imageContainer.id = "imgContainrId_" + this.countNum; //set id
+      //console.log ("imageContainer x0: ", imageContainer);
+
+      imageContainerId = $ ("#imgContainrId_" + this.countNum); //get id
+      //console.log ("imageContainerId x1: ", imageContainerId); //starts at selector: "#imgContainrId_2"
+
+      fImgContainerDivStyling (imageContainerId, containerWidth, this.containerHeight); //this.containerWidth,
+
+      //colHeader.id = "colHeaderId_" + counter;
+      //colHeader.innerHTML = headerString;
+      //h2.innerHTML = headerString;
+      //let imageNameId = document.getElementById ("imageNameId_" + i);
+      // + i;//"someString" +i;
+      title.innerHTML            = titleString;
+      subTitle.innerHTML         = subTitleString;
+      paragDescription.innerHTML = descriptionString;
+
+      /* cloning the template parent div */
+      let projContnrClone = projectContainer.cloneNode (true);
+      /* unique id */
+      projContnrClone.id = projName + "_ProjectContainerId_" + this.countNum;// + counter2;
+
+      let projContnrCloneId = $ ("#" + projName + "_ProjectContainerId_" + this.countNum);// + counter2);
+      //console.log ("projContnrCloneId: ", projContnrCloneId);
+      //fImgDivStylingX(projContnrCloneId, "./images/PersonalFresh/PF-00.jpg");
+
+      /*let headerId_1 = $ ("#headerId_1");
+       fImgDivStylingX (headerId_1, "./images/PersonalFresh/PF-00.jpg");*/
+
+      /* appending */
+      $ (projContnrClone).appendTo (container); //appending to the DOM
+      /* remove template from the html */
+      projectContainer.remove ();
+
+    }
+
+    fBuildImageDivs (projTitle, counter, myImageSrc, imageNameString, imgWidth, imgHeight) {
+      //console.log ("fBuildImageDivs:===-------------------------•", counter);
+      /*this.containerWidth  = imgWidth * counter;
+       console.log ("this.containerWidth 2: ", this.containerWidth);*/
+      this.containerHeight = imgHeight;// * counter;
+      //console.log("cln3Id 2: ",cln3Id); //not defined
+      /*imageContainer.className = "imgContainrClass" + counter;
+       let imgContainrClass = $(".imgContainrClass"+ counter)
+       console.log("imgContainrClass: ", imgContainrClass);*/
+
+      let idExtension = projTitle + counter;// +""+ counter2 +""+ counter3; //counter+counter2+counter3;//
+      //console.log("idExtension: ", idExtension);
+
+      /** createElement div**/
+      let imgDivElemnt = document.createElement ("div");
+      imgDivElemnt.id  = "imageDivId_" + idExtension; //set id
+
+      /*console.log("imageContainer x2: ", imageContainer);
+       $ (imgDivElemnt).appendTo (container1Id);*/ //projectContainer container imageContainer
+      /*$( "imgDivElemnt" ).appendTo( $( ".imageContainer" ) );*/
+      //imageContainer.id = "imgContainrId_" + countNum;
+      //imgDivElemnt.id  = "imageDivId_" + idExtension;
+
+      let imgContainrId = $ ("#imgContainrId_" + this.countNum);
+
+      imgContainrId.css ({"width": this.containerWidth});
+
+      //console.log ("imgContainrId: ", imgContainrId);
+      $ (imgDivElemnt).appendTo (imgContainrId);
+
+      let imgDivElemntId = $ ("#imageDivId_" + idExtension); //get id
+      //imgDivElemntId.css ({"background": "url(" + myImageSrc + ") no-repeat"});
+      imgDivElemntId.css ({
+        /*"padding-left"    : "-15px",
+         "padding-right"   : "-15px",*/
+        "margin"          : "0px",
+        "background"      : "url(" + myImageSrc + ") no-repeat",
+        "background-size" : "cover", //cover 100%
+        "width"           : imgWidth, //"300px",
+        "height"          : imgHeight, //"300px", //ImageHeight(origWt, origHt),
+        "border"          : "1px solid orange",
+        "background-color": "orange",
+        "position"        : "relative", //relative absolute
+        "float"           : "left"
+        //"overflow"        : "visible"//hidden; visible
+      });
+
+      let imageNameDiv       = document.createElement ("div");
+      imageNameDiv.className = "imageNameDivClass"
+      imageNameDiv.id        = "imageNameDivId_" + idExtension; //counter + counter2;// + counter3;
+      $ (imageNameDiv).appendTo (imgDivElemntId); //imageContainer
+      imageNameDiv.innerHTML = imageNameString;
+
+      /*imageName.id = "imageNameId_" + counter;// + counter2 + counter3;
+       imageName.innerHTML = imageNameString;*/
+      /*imageName.id        = "imageNameId_" + idExtension; //counter + counter2;// + counter3;
+       let imageNameId = $ ("#imageNameId_" + idExtension);
+       //$ (imageName).appendTo (imageNameId); //imageContainer
+       imageNameId.innerHTML = imageNameString;
+
+       /!** cloning the template parent div **!/
+       let cln = imageDiv.cloneNode (true);
+       //console.log ("cln: ", cln);
+
+       /!* unique id *!/
+       cln.id = "imageDivId_" + idExtension;
+
+       let clnId = $("#imageDivId_" + idExtension);
+       clnId.css ({
+       /!*"padding-left"    : "-15px",
+       "padding-right"   : "-15px",*!/
+       "margin"          : "6px",
+       "background"      : "url(" + myImageSrc + ") no-repeat",
+       "background-size" : "cover", //cover 100%
+       "width"           : imgWidth, //"300px",
+       "height"          : imgHeight, //"300px", //ImageHeight(origWt, origHt),
+       "border"          : "1px solid orange",
+       "background-color": "orange",
+       "position"        : "relative", //relative absolute
+       "float"           : "left"
+       //"overflow"        : "visible"//hidden; visible
+       });
+
+       /!* appending *!/
+       let imgContainrId = $ ("#imgContainrId_" + this.countNum);
+       //console.log ("imgContainrId: ", imgContainrId);
+       $ (cln).appendTo (imgContainrId);
+       // $ (cln).appendTo (imageContainer);
+       //console.log ("imageContainer: ", imageContainer);
+       /!* remove template from the html *!/
+       imageDiv.remove ();*/
+
+      //$(OwnPhones_ProjectContainerId_00).css({"background": "url(" + myImageSrc + ") no-repeat"});
+      //$(imageDivId_OwnPhones000).css({"background": "url(" + myImageSrc + ") no-repeat"});
+
+    }
+
+    /*fBuildImageDivs(counter, counter2, counter3, myImageSrc, imageNameString){
+     console.log ("fBuildImageDivs:===-------------------------•");
+
+     //imageContainer.id = "imgContainrId_" + counter + counter2;
+
+     imageName.id = "imageNameId_" + counter + counter2 + counter3;
+     imageName.innerHTML = imageNameString;
+
+     /!*let imgDivElemnt       = document.createElement ("div");
+     imgDivElemnt.id    = "imageDivId_" + counter + counter2 + counter3;
+     $ (imgDivElemnt).appendTo (imageContainer);
+
+     let imgDivElemntId = $ ("#imageDivId_" + counter + counter2 + counter3);
+     fImgDivStyling(imgDivElemntId, myImageSrc);*!/
+
+     //console.log ("imgDivElemnt: ", imgDivElemnt);
+
+     /!*for(let elem = 0; elem < 5; elem++){
+     imgDivElemnt.id    = "imageDivIdx_" + counter + counter2 + counter3;
+     $ (imgDivElemnt).appendTo (imageContainer);
+     }*!/
+     //let imageDivId = $ ("#imageDivId_" + counter + counter2 + counter3);
+     //console.log ("imageDivId: ", imageDivId);
+
+     //fImgDivStyling(imageDivId, imgSrc); //"./images/PersonalFresh/PF-01.jpg");
+     //console.log ("imgSrc: ", imgSrc);
+     /!* cloning the template parent div *!/
+     let cln = imageDiv.cloneNode (true);
+     /!* unique id *!/
+     cln.id = "imageDivId_" + counter + counter2 + counter3;
+     //let clnId = $ ("#imageDivId_" + counter + counter2 + counter3);
+     console.log ("cln: ", cln);
+     /!* cln.css ({
+     "background"     : "url(" + imgSrc + ") no-repeat",
+     "background-size": "cover",
+     "width"          : "50%",
+     "height"         : "400px",
+     "border"         : "4px solid orange"
+     })*!/
+     /!* appending *!/
+     //document.body.appendChild (cln);
+     $ (cln).appendTo (imageContainer);
+     //console.log ("imageContainer: ", imageContainer);
+     /!* remove template from the html *!/
+     imageDiv.remove ();
+     }*/
+
+    /*fBuildProjectContainer (sectionLength, imageNameString) {
+     /!** for loop to create the multiple copies
+     *  based on how many sections from json
+     ******************************************!/
+     for (let i = 0; i < sectionLength; i++) {
+     /!* unique id assignment *!/
+     imageContainer.id = "imgContainrId_" + i;
+
+     imageName.id = "imageNameId_" + i;
+     //let imageNameId = document.getElementById ("imageNameId_" + i);
+     imageName.innerHTML = imageNameString + i;//"someString" +i;
+
+     //$(imageName).innerHTML = "TEST"
+     //document.getElementsByClassName("imageName").innerHTML = "TEST";
+
+     /!* cloning *!/
+     let cln = projectContainer.cloneNode (true);
+     /!* unique id *!/
+     cln.id = "projectContainerId_" + counter;
+     /!* appending *!/
+     //document.body.appendChild (cln);
+     $ (cln).appendTo (container);
+     /!* remove template from the html *!/
+     projectContainer.remove ();
+     /!* iteration *!/
+     counter++;
+     }
+     }*/
+  }
+
+  /*
+   * forEach
+   *
+   * Lambdas
+   *
+   * */
+
+  /*class BuildImageDivs {
+   constructor(){
+   this.fBuildImageDivs(counter, counter2, counter3, myImageSrc, imageNameString){
+   console.log ("fBuildImageDivs:===-------------------------•");
+   imageName.id = "imageNameId_" + counter + counter2 + counter3;
+   imageName.innerHTML = imageNameString;
+   let cln = imageDiv.cloneNode (true);
+   cln.id = "imageDivId_" + counter + counter2 + counter3;
+   $ (cln).appendTo (imageContainer);
+   imageDiv.remove ();
+   }
+   }
+   }
+   let buildImgDivs = new BuildImageDivs();*/
+
+  let fBuildImageDivs_X = function (projTitle, counter, counter2, counter3, myImageSrc, imageNameString) {
+    let idExtension = projTitle + counter + "" + counter2 + "" + counter3; //counter+counter2+counter3;//
+    console.log ("idExtension: ", idExtension);
+    let imgDivElemnt = document.createElement ("div");
+    imgDivElemnt.id  = "imageDivId_" + idExtension; //counter + counter2;// + counter3;
+    $ (imgDivElemnt).appendTo (imageContainer);
+    let imgDivElemntId = $ ("#imageDivIdXXX_" + idExtension);
+    imgDivElemntId.css ({
+      "padding-left"    : "-15px",
+      "padding-right"   : "-15px",
+      "background"      : "url(" + myImageSrc + ") no-repeat",
+      "background-size" : "150%", //cover 100%
+      "width"           : "100px",
+      "height"          : "250px", //ImageHeight(origWt, origHt),
+      "border"          : "4px solid cyan",
+      "background-color": "teal",
+      "position"        : "relative",
+      "float"           : "left"
+      //"overflow"        : "visible"//hidden; visible
+    });
+
+    $ (OwnPhones_ProjectContainerId_00).css ({"background": "url(" + myImageSrc + ") no-repeat"});
+    $ (imageDivId_OwnPhones000).css ({"background": "url(" + myImageSrc + ") no-repeat"});
+
+  }
+
+  /** Create a new instance of the BuildSectionContainer class **/
+  let allSections = new BuildSectionContainer ();
+  //allSections.fBuildProjectContainer(3);
+
+  let fRunAjax = function () {
+    console.log ("fRunAjax:===-------------------------•");
+    $.ajax ({
+      url     : "./src/json/ajaxData2.json",
+      type    : "GET",
+      dataType: "json",
+      cache   : "false",
+      success : function (data) {
+        //console.log ("AjxJSONCol: sections: ", sections); //Object
+        //console.log ("AjxJSONCol: sections.GDSite.length: ", sections.GDSite.length); //2
+        //let ij = 0;
+        let i   = 0;
+        let ii  = 0;
+        let iii = 0;
+        /*$(data.GDSite).each(function(index, value){
+         console.log("index: ",index); //0 1
+         console.log("value.sectionTitle: ", value.sectionTitle);
+         console.log("value.projects[0].title: ", value.projects[0].title);*/
+
+        /*let imageContainerWidth = data.GDSite.projects.images.length;
+         console.log("imageContainerWidth: ",imageContainerWidth);*/
+
+        console.log ("************************************************");
+
+        /**----- SECTIONS -----**/
+        for (let sect of data.GDSite) {
+          i++; //used for unique id extension
+          //console.log("sect: ", sect);
+          allSections.fBuildSectionHeaderContainer (sect.sectionTitle, i);
+
+          /**----- PROJECTS -----**/
+          for (let proj of sect.projects) {
+            ii++;
+            //console.log("proj.title: ",proj.title);
+            //console.log("proj.subTitle: ",proj.subTitle);
+            //console.log("proj.projDescription: ",proj.projDescription);
+
+            let imageContainerWidth = proj.images.length * twoColumnsTestInstance.RightColumn + 100;//proj.imagesWidth +100;
+            console.log ("imageContainerWidth:", imageContainerWidth, "• images count:", proj.images.length, "•", proj.title);
+
+            allSections.fBuildProjectContainer (
+              ii, proj.title, proj.title, proj.subTitle,
+              proj.projDescription, imageContainerWidth,
+              ownImageResizePerc.ImgNewHeight);//, ("My Unique Tag:  " + proj.title));
+
+            /**----- IMAGES -----**/
+            for (let imgs of proj.images) {
+              iii++;
+              //console.log("imgs.imgName: ", index, imgs.imgName);
+              let myImage    = new Image ();
+              let imagesPath = "./images/" + proj.title + "/";
+              myImage.src    = imagesPath + imgs.imgName;
+              //myImage.src = "./images/PersonalFresh/PF-01.jpg"
+              //console.log("myImage.src: ", myImage.src);
+              //let ix = 0;
+
+              /*this.containerWidth = proj.images.length * proj.imagesWidth;
+               console.log ("this.containerWidth: ", this.containerWidth);*/
+
+              allSections.fBuildImageDivs (
+                proj.title, iii, myImage.src, imgs.imgTitle,
+                twoColumnsTestInstance.RightColumn,
+                ownImageResizePerc.ImgNewHeight); //proj.imagesWidth, proj.imagesHeight
+
+              //twoColumnsTestInstance.fTwoColumns (proj.columnPercentage);
+              //ownTwoColumnsInstance.fTwoColumns (${proj.columnPercentage}
+
+              ownImageResizePerc.fImgResPerc (
+                proj.imagesWidth, proj.imagesHeight,
+                twoColumnsTestInstance.RightColumn);
+
+              console.log (
+                `
+                |=====--------------------------=====|
+                Images Log Info:
+                Title: ${proj.title} | iii: ${iii}
+                Orig Width: ${proj.imagesWidth} | Orig Height: ${proj.imagesHeight}
+                imgResizePercent: ${ownImageResizePerc.imgResizePercent}
+                New Width: ${twoColumnsTestInstance.RightColumn} | New Height: ${ownImageResizePerc.ImgNewHeight}
+                rightColumnPercent: ownTwoColumnsInstance.fTwoColumns (${proj.columnPercentage})
+                imgName: ${imgs.imgName}
+                imgTitle: ${imgs.imgTitle}
+                `);
+              console.log ("=====-------------------------------------------=====");
+
+            }
+          }
+        }
+
+        console.log ("************************************************");
+
+        /*for(let i of value.projects){
+         console.log("i :", i);
+         console.log(title);
+         }
+         console.log("value.projects[0].images[0].imgName: ", value.projects[0].images[0].imgName);*/
+        //})
+
+        /*$.each (sections, function (indx, val) {
+         console.log ("$.each: sections: ", sections);
+         console.log ("$.each: indx: ", indx); //GDSite
+         console.log ("$.each: indx.length: ", indx.length); //GDSite
+         console.log ("$.each: val.length: ", val.length);
+         });*/
+        /*
+
+         /!** for-of loop: returns all the Objects in GDSite node **!/
+         for (let allGDSections of sections.GDSite) {
+         //console.log ("allGDSections: ", allGDSections);
+         /!*for (let value of allSections) {
+         console.log ("value xxx: ", value);
+         }*!/
+         }
+
+         //let i = 0;
+         for (let allGDSections in sections.GDSite) {
+
+         //console.log ("allGDSections in: ", allGDSections + i);
+         //console.log ("i xxx: ", i);
+         //allSections.fBuildProjectContainer (sections.GDSite.length, sections.GDSite[i].section[i].sectionTitle);
+         //i++;
+         /!*for (let value of allSections) {
+         console.log ("value xxx: ", value);
+         }*!/
+         //i++;
+         }
+
+         //allSections.fBuildProjectContainer (sections.GDSite.length, sections.GDSite[i].section[i].sectionTitle);
+         //sections.GDSite.section.sectionTitle
+         */
+
+        /*console.log(" \n \n ");
+         console.log ("Section Titles & Project Titles ===-------------------------•");
+         /!** Number of Sections in GDSite **!/
+         let GDSiteLength = sections.GDSite.length;
+         console.log("GDSiteLength: ", GDSiteLength); //2 Sections
+
+         /!** Number of Projects in Section 1 **!/
+         let sectionUno = sections.GDSite[0].section; //Object
+         let sectionUnoLength = sectionUno.length;
+         console.log("sectionUnoLength: ", sectionUnoLength); //2 projects
+
+         let sectionUnoTitle = sectionUno[0].sectionTitle
+         console.log("sectionUnoTitle: ", sectionUnoTitle);
+
+         let sectionUno_proj0 = sectionUno[0].title;
+         console.log("sectionUno_proj0: ", sectionUno_proj0);
+
+         let sectionUno_proj1 = sectionUno[1].title;
+         console.log("sectionUno_proj1: ", sectionUno_proj1);
+
+         /!** Number of Projects in Section 2 **!/
+         let sectionDos = sections.GDSite[1].section; //Object
+         let sectionDosLength = sectionDos.length;
+         console.log("sectionDosLength: ", sectionDosLength); //3 projects
+
+         let sectionDosTitle = sectionDos[0].sectionTitle
+         console.log("sectionDosTitle: ", sectionDosTitle);
+
+         let sectionDos_proj0 = sectionDos[0].title;
+         console.log("sectionDos_proj0: ", sectionDos_proj0);
+
+         let sectionDos_proj1 = sectionDos[1].title;
+         console.log("sectionDos_proj1: ", sectionDos_proj1);
+
+         let sectionDos_proj2 = sectionDos[2].title;
+         console.log("sectionDos_proj2: ", sectionDos_proj2);
+         console.log ("End Section Titles & Project Titles ===-------------------------•\n \n");
+
+
+
+         let sectionLength_0 = sections.GDSite[0].section.length;
+         console.log("sectionLength_0: ", sectionLength_0);
+         let sectionLength_1 = sections.GDSite[1].section.length;
+         console.log("sectionLength_1: ", sectionLength_1);
+
+         //let ij = 0;*/
+
+        /***************************************************************************/
+        /*
+         for (let i = 0; i < sections.GDSite.length; i++) {
+         /!* 2 Sections: Designs, Illustrations *!/
+         let sectionsGDSection = sections.GDSite[i].section[0];
+         console.log ("sectionsGDSection: ", sectionsGDSection);//first object in a section
+         let sectionTitle = sectionsGDSection.sectionTitle;
+         console.log ("sectionTitle: ", sectionTitle); //Header Titles
+         let sectionsGD = sections.GDSite[i];
+         //console.log ("sectionsGD i: ", sectionsGD);
+         allSections.fBuildSectionHeaderContainer (sectionTitle, i);
+         console.log ("i: ", i);
+         /!***************************************************************************!/
+         console.log ("How many Projects on section " + i + " : ", sections.GDSite[i].section.length);
+         for (let ii = 0; ii < sections.GDSite[i].section.length; ii++) {
+         /!* 1: 2 Projects: Own, HBCBS
+         *  2: 3 Projects: PFresh, Filipinas, Posters*!/
+         console.log ("Projects Count: ", sections.GDSite[i].section.length);
+         let sectionsGD = sections.GDSite;
+         //console.log ("sectionsGD ii: ", sectionsGD);
+         /!*let sectionsGDSection = sections.GDSite[i].section[i];
+         console.log ("sectionsGDSection: ", sectionsGDSection); //first Project on each section
+
+         let sectionTitle = sectionsGDSection.sectionTitle;
+         console.log ("sectionTitle: ", sectionTitle);*!/
+         //sectionTitle: Web & Graphics Designs
+         //sectionTitle: Painting & Digital Illustrations
+         /!** Cache json parag nodes **!/
+         //sections.GDSite[i].section[0].images[0].imgTitle
+         let titolo          = sections.GDSite[i].section[ii].title; //sectionsGDSection.title;
+         console.log ("titolo: ",titolo);
+         let subTitolo       = sections.GDSite[i].section[ii].subTitle;
+         let projDescription = sections.GDSite[i].section[ii].projDescription;
+         //console.log ("sections.GDSite[i]: ", sections.GDSite[i]);
+         //console.log ("images/+sectionTitle: ", "images/" + sectionTitle);
+         //let images = sectionsGDSection.images[0];
+         //console.log ("images: ", images);
+         //console.log ("section[0].images.length: ", sections.GDSite[i].section[0].images.length);
+         /!* let myImage;
+         for(let ii=0; ii<sections.GDSite[i].section[0].images.length; ii++){
+         console.log ("ii: ", ii);
+         myImage = "./images/PersonalFresh/PF-0" + ii + ".jpg";
+         }*!/
+         //ij++;
+         //"./images/"+ titolo + "/" + sections.GDSite[i].section[0].images[0].imgName;
+         //PersonalFresh/PF-00.jpg";
+         //"./images/" + titolo + "/" + sections.GDSite[i].section[0].images[0].imgName;
+         //imagesPath + images.imgName; //sections.GDSite[i].section[0].images[0].imgName;
+         //console.log ("myImage.src: " + myImage.src);//imagesPath + sections.GDSite[i].section[0].images[0].imgName);
+
+         allSections.fBuildProjectContainer (i, ii, titolo, titolo, subTitolo, projDescription);
+
+         let myImages = "./images/PersonalFresh/PF-00.jpg"
+         let myImagesImgTitle = "TITOLO";
+         allSections.fBuildImageDivs(titolo, i, 2, ii, myImages, myImagesImgTitle);
+
+         /!*let imgTitle        = sections.GDSite[i].section[ii].images[0].imgTitle;
+         let myImage = new Image ();
+         let imagesPath = "./images/" + sections.GDSite[i].section[ii].title + "/";
+         myImage.src = imagesPath + sections.GDSite[i].section[ii].images[0].imgName;
+         fBuildImageDivs(i, ii, 0, myImage.src, imgTitle);*!/
+
+         /!***************************************************************************!/
+         console.log ("How many Images in a project " + titolo + " : ", sections.GDSite[i].section[ii].images.length);
+         /!*for (let iii = 0; iii < sections.GDSite[i].section[ii].images.length; iii++){
+         console.log ("For image loop :===-----------------------------------i-ii-iii---• ", i, " ", ii, " ", iii);
+         let imgTitle        = sections.GDSite[i].section[ii].images[iii].imgTitle;
+         console.log ("iii : imgTitle: ",imgTitle + " : i=" + i + " : " + titolo);
+         console.log ("iii : sections.GDSite[i].section: ",sections.GDSite[i].section);
+         console.log ("iii : sections.GDSite[i].section[ii].images: ",sections.GDSite[i].section[ii].images);
+         console.log ("iii : sections.GDSite[i].section[ii].images[iii].imgTitle: ",sections.GDSite[i].section[ii].images[iii].imgTitle);
+         console.log ("iii : sections.GDSite[i].section[ii].images[iii].imgName: ",sections.GDSite[i].section[ii].images[iii].imgName);
+         let myImage = new Image ();
+         let imagesPath = "./images/" + sections.GDSite[i].section[ii].title + "/";
+         myImage.src = imagesPath + sections.GDSite[i].section[ii].images[iii].imgName;
+
+         myImages = myImage.src;
+         myImagesImgTitle = imgTitle;
+
+         //let imagesPath = "./images/PersonalFresh/"
+         //console.log ("imagesPath: ", imagesPath);
+         //myImage.src = "./images/PersonalFresh/PF-0" + i + ".jpg";
+         //myImage.src = imagesPath + sections.GDSite[i].section[ii].images[iii].imgName;
+         //myImage.src = imagesPath + "PF-00.jpg"
+         console.log ("iii : image to load: ", myImage.src);
+
+         let clnId = $ ("#imageDivId_x" + i + ii + iii);
+         console.log ("iii : clnId: ", clnId);
+         //let imgDivId = $ ("#imageDivId_" + i + ii + iii);
+         //console.log ("imgDivId: ", imgDivId);
+         //fImgDivStyling(imgDivId, myImage.src);
+         //allSections.fBuildImageDivs (i, ii, iii, myImage.src, imgTitle);
+         //fBuildImageDivs(i, ii, iii, myImage.src, imgTitle);
+         }*!/
+         //console.log ("image to load: ", "./images/" + titolo + "/" + sections.GDSite[i].section[0].images[0].imgName);
+
+         //console.log ("sections.GDSite[i].section[0].sectionTitle: ", sections.GDSite[i].section[0].sectionTitle);
+         for (let iii = 0; iii < sections.GDSite[i].section[ii].images.length; iii++){
+         console.log("****************************************************************************");
+         console.log ("For image loop :===-------------------i-ii-iii---• ", i, " ", ii, " ", iii);
+         console.log("i: Section ", i + " : " + sections.GDSite[i].section[0].sectionTitle);
+         console.log("ii: Project ", ii + " : " + sections.GDSite[i].section[ii].title);
+         console.log("iii: Image Name ", iii + " : " + sections.GDSite[i].section[ii].images[iii].imgName);
+         console.log("****************************************************************************");
+
+         let myImage = new Image ();
+         let imagesPath = "./images/" + sections.GDSite[i].section[ii].title + "/";
+         myImage.src = imagesPath + sections.GDSite[i].section[ii].images[iii].imgName;
+
+         /!*let myImages = "./images/PersonalFresh/PF-00.jpg"*!/
+         let myImagesImgTitle = "TITOLO";
+         //fBuildImageDivs(titolo, i, ii, iii, myImage.src, myImagesImgTitle);
+
+         allSections.fBuildImageDivs(titolo, i, ii, iii, myImage.src, myImagesImgTitle);
+         }
+
+         }
+         }
+
+         */
+
+        /** for-of loop: returns all the Objects in Designs node **/
+        /*for (let value of sections.GDSite[0].section) {
+         //console.log ("value: ", value);
+         }*/
+
+        //var i = 0;
+        /*let aValues = [];
+         $.each (sections, function (indx, val) {
+         aValues[aValues.length] = val;
+         console.log ("AjxJSONCol: aValues: ", aValues);
+         console.log ("AjxJSONCol: sections.GDSite[0].Designs.length xxx: ", sections.GDSite[0].Designs.length); //2
+         console.log ("AjxJSONCol: sections xxx: ", sections.GDSite[0].Designs[0].title); //OwnPhones
+         console.log ("AjxJSONCol: indx: ", indx); //GDSite
+         console.log ("AjxJSONCol: val: ", val); //[Object] >
+         console.log ("AjxJSONCol: val.Designs.length: ", val.title); //
+         console.log ("AjxJSONCol: val.length: ", val.length);
+         //console.log ("AjxJSONCol: val[0].Designs[0].sectionTitle: ", val[0].Designs[0].sectionTitle); //Web & Graphics Designs
+         //console.log ("AjxJSONCol: val[0].Designs.sectionTitle: ", val[0].Designs[0].title); //OwnPhones
+         //console.log ("AjxJSONCol: Title: ", val[sectionIndxNum].title);
+         //console.log ("AjxJSONCol: SubTitle: ", val[sectionIndxNum].subTitle);
+         console.log ("AjxJSONCol: sections.GDSite[0].Designs.length: ", sections.GDSite[0].Designs.length);
+         console.log ("AjxJSONCol: sections.GDSite[1].Illustrations.length: ",
+         sections.GDSite[1].Illustrations.length);
+
+         /!**-----=====( Designs Section )=====-----**!/
+         for (let jD1 = 0; jD1 < sections.GDSite[0].Designs.length; jD1++) {
+         console.log ("AjxJSONCol: jD1 xx1: ", jD1);
+         console.log ("AjxJSONCol: sections.GDSite[0].Designs[jD1].title: ", sections.GDSite[0].Designs[jD1].title);
+         console.log ("AjxJSONCol: sections.GDSite[0].Designs[jD1].imagesWidth: ", sections.GDSite[0].Designs[jD1].imagesWidth);
+         console.log ("AjxJSONCol: sections.GDSite[0].Designs[jD1].imagesHeight: ", sections.GDSite[0].Designs[jD1].imagesHeight);
+         let imagesWidth  = sections.GDSite[0].Designs[jD1].imagesWidth;
+         let imagesHeight = sections.GDSite[0].Designs[jD1].imagesHeight;
+         /!*fGenRow ("jD1" + jD1, container, "rowImages1");
+         fGenLeftColumn ("jD1" + jD1, row);
+         fGenRightColumn ("jD1" + jD1, row, "orange", imagesWidth, imagesHeight);*!/
+
+         //let totalWidthOfAllImages = rightColumnWidth * sections.GDSite[0].Designs[jD1].images.length;
+         //fGenImageContainer ("jD1" + jD1, rightColumn, totalWidthOfAllImages, imagesWidth, imagesHeight);
+
+         for (let jD2 = 0; jD2 < sections.GDSite[0].Designs[jD1].images.length; jD2++) {
+         let myImage = new Image ();
+         myImage.src = "images/" + sections.GDSite[0].Designs[jD1].title + "/" + sections.GDSite[0].Designs[jD1].images[jD2].imgName;
+         //console.log("myImage.src: ", myImage.src);
+         //fGenImageDiv(idCount, appendedTo, imgSrc);
+         //fGenImageDiv (sections.GDSite[0].Designs[jD1].title + jD2, imgContainer, myImage.src, imagesWidth, imagesHeight);
+         //console.log("imgContainer2: ", imgContainer);
+         }
+         }
+
+         /!**-----=====( Illustrations Section )=====-----**!/
+         for (let jI1 = 0; jI1 < sections.GDSite[1].Illustrations.length; jI1++) {
+         console.log ("AjxJSONCol: jI1 xx2: ", jI1);
+         console.log ("AjxJSONCol: sections.GDSite[1].Illustrations[jI1].title: ",
+         sections.GDSite[1].Illustrations[jI1].title);
+         console.log ("AjxJSONCol: sections.GDSite[1].Illustrations[jI1].imagesWidth: ",
+         sections.GDSite[1].Illustrations[jI1].imagesWidth);
+         console.log ("AjxJSONCol: sections.GDSite[1].Illustrations[jI1].imagesHeight: ",
+         sections.GDSite[1].Illustrations[jI1].imagesHeight);
+         let imagesWidth  = sections.GDSite[1].Illustrations[jI1].imagesWidth;
+         let imagesHeight = sections.GDSite[1].Illustrations[jI1].imagesHeight;
+         /!*fGenRow ("jI1" + jI1, container, "rowImagesX");
+         fGenLeftColumn ("jI1" + jI1, row);
+         fGenRightColumn ("jI1" + jI1, row, "cyan", imagesWidth, imagesHeight);*!/
+
+         //let totalWidthOfAllImages = rightColumnWidth * sections.GDSite[1].Illustrations[jI1].images.length;
+         //console.log ("AjjxJSONCol: totalWidthOfAllImages: ", totalWidthOfAllImages);
+         //fGenImageContainer ("jI1" + jI1, rightColumn, totalWidthOfAllImages, imagesWidth, imagesHeight);
+
+         for (let jI2 = 0; jI2 < sections.GDSite[1].Illustrations[jI1].images.length; jI2++) {
+         let myImage = new Image ();
+         myImage.src = "images/" + sections.GDSite[1].Illustrations[jI1].title + "/" +
+         sections.GDSite[1].Illustrations[jI1].images[jI2].imgName;
+         //console.log("myImage.src: ", myImage.src);
+         //fGenImageDiv(idCount, appendedTo, imgSrc);
+         //fGenImageDiv (sections.GDSite[1].Illustrations[jI1].title + jI2, imgContainer, myImage.src, imagesWidth, imagesHeight);
+         console.log ("sections.GDSite[1].Illustrations[jI1].title + jI2: ",
+         sections.GDSite[1].Illustrations[jI1].title + jI2);
+         }
+         }
+         });*/
+
+        /*for (let j = 0; j < sections.GDSite.length; j++) {
+         console.log ("AjxJSONCol: aValues[j]: ", aValues[j]);//.Designs[j].sectionTitle);
+         console.log ("AjxJSONCol: j: ", j);
+         for (let jj = 0; jj < sections.GDSite[0].length; jj++) {
+         console.log ("AjxJSONCol: jj: ", jj);
+         console.log ("AjxJSONCol: sections.GDSite[0].Designs[jj].title: ", sections.GDSite[0][jj].title);
+         /!*fGenRow (jj, container, "rowImages");
+         fGenLeftColumn (jj, row);
+         fGenRightColumn (jj, row);*!/
+
+         /!*fGenRowParagh (jj, container);
+         fGenLeftColumn (jj, rowParagh);
+         fGenRightColumn (jj, rowParagh);*!/
+
+         let totalWidthOfAllImages = rightColumnWidth * sections.Designs[jj].images.length;
+         //console.log ("AjjxJSONCol: totalWidthOfAllImages: ", totalWidthOfAllImages);
+         //console.log ("AjjxJSONCol: sections.Designs[jj].images.length: ", sections.Designs[jj].images.length);
+
+         //fGenImageContainer (jj, rightColumn, totalWidthOfAllImages);
+
+         for (let jjj = 0; jjj < sections.Designs[jj].images.length; jjj++) {
+         //totalWidthOfAllImages = 400 * jjj;
+
+         let myImage = new Image ();
+         myImage.src = "images/" + sections.Designs[jj].title + "/" + sections.Designs[jj].images[jjj].imgName;
+         //console.log("myImage.src: ", myImage.src);
+         //fGenImageDiv(idCount, appendedTo, imgSrc);
+         //fGenImageDiv (sections.Designs[jj].title + jjj, imgContainer, myImage.src, imagesWidth, imagesHeight);
+         //console.log("imgContainer2: ", imgContainer);
+         }
+         }
+         }*/
+      }
+    });
+  };
+
+  fRunAjax ();
+  /*********************( AJAX • END •  JSON )*********************/
+
+
+
+  /********************************************~********************************************/
+  /** Test for creating private and public variables and methods inside class object **/
+  class ES6PrivatePublic {
+
+    constructor () {
+      //console.log ("ES6PrivatePublic");
+      let testVariable = "Private Test Variable"; //private //undefined outside
+      this.varTest     = "varTest in constructor"; //public //accessible outside
+
+      this.fMethodInsideConstructor = function () {
+        return testVariable; //return private testVariable outside class by accessing this method
+      }
+    }
+
+    //let testVariable = "Private Test Variable";
+    fPrivateMethod () {
+      //console.log ("fPrivateMethod: ");
+    }
+
+    fTestMethod () {
+      //console.log ("methodTest");
+      //this.varTest = testVariable; //should print "Private..."
+      //console.log ("testVariable: ",testVariable);
+    }
+  }
+
+  let test = new ES6PrivatePublic ();
+  test.fTestMethod ();
+  /*console.log (test.varTest);
+   console.log (test.testVariable);
+   console.log (test.fPrivateMethod ());
+   console.log (test.fMethodInsideConstructor ());*/
+
+</script >
+
+
+<!--var select = document.getElementsByTagName('select');
+var dupeSelect = select[0].cloneNode(true);
+dupeSelect.id = 'sel1';
+document.body.appendChild(dupeSelect);-->
+
+</body >
+<!--==========| BODY END |==========-->
+</html >
